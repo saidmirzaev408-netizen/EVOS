@@ -1,4 +1,5 @@
 import React from 'react';
+import { IstiqlolLogo } from './IstiqlolLogo';
 
 export const Footer = () => {
   return (
@@ -8,10 +9,8 @@ export const Footer = () => {
           
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#00A859] to-[#047857] flex items-center justify-center text-white font-black text-2xl tracking-tighter shadow-md">
-                I
-              </div>
+            <div className="flex items-center space-x-3">
+              <IstiqlolLogo className="w-14 h-14 drop-shadow-[0_0_16px_rgba(0,255,100,0.5)]" />
               <div className="flex items-center gap-1.5">
                 <span className="text-2xl font-black tracking-tight text-white">ISTIQLOL</span>
                 <span className="w-2 h-2 rounded-full bg-[#F3BE53]"></span>

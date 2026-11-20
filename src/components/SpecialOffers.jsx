@@ -23,10 +23,10 @@ export const SpecialOffers = () => {
     },
     {
       id: 2,
-      title: 'EVOS2025 Chegirmasi',
+      title: 'ISTIQLOL2025 Chegirmasi',
       discount: '15% OFF',
       subtitle: 'Pirojniy, hot-dog va qofega 15% tejamkorlik',
-      code: 'EVOS2025',
+      code: 'ISTIQLOL2025',
       bg: 'from-[#2E2818] to-[#1C1A14] border border-[#E5A934]/40',
       badgeBg: 'bg-[#E5A934] text-[#131512]',
       image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80'

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
 import { Icon } from './Icons';
+import { IstiqlolLogo } from './IstiqlolLogo';
 
 export const Header = () => {
   const {
@@ -47,9 +48,7 @@ export const Header = () => {
               onClick={() => setAppMode('client')}
               className="flex items-center space-x-2.5 text-left group"
             >
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-[#00A859] to-[#047857] flex items-center justify-center text-white font-black text-2xl tracking-tighter shadow-lg shadow-[#00A859]/20 group-hover:scale-105 transition-transform">
-                I
-              </div>
+              <IstiqlolLogo className="w-11 h-11 sm:w-12 sm:h-12 drop-shadow-[0_0_12px_rgba(0,255,100,0.55)] group-hover:scale-110 transition-transform" />
               <div>
                 <div className="flex items-center gap-1.5">
                   <span className="text-2xl sm:text-3xl font-black tracking-tight text-white group-hover:text-[#F3BE53] transition-colors">

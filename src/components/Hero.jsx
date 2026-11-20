@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
 import { Icon } from './Icons';
+import { IstiqlolLogo } from './IstiqlolLogo';
 
 export const Hero = () => {
   const { t } = useApp();
@@ -22,9 +23,9 @@ export const Hero = () => {
           <div className="lg:col-span-7 space-y-5 text-center lg:text-left z-10">
             
             {/* Official Brand Badge */}
-            <div className="inline-flex items-center space-x-2 bg-[#23271E] border border-[#353B2F] px-4 py-1.5 rounded-full text-[#F3BE53] font-black text-xs sm:text-sm shadow-md">
-              <span className="animate-bounce">⚡</span>
-              <span>🔥 Issiq Somsa, Shirin Pirojniy, Xot-dog va Yaxna Moxitolar</span>
+            <div className="inline-flex items-center space-x-2.5 bg-[#23271E] border border-[#353B2F] px-4 py-1.5 rounded-full text-[#F3BE53] font-black text-xs sm:text-sm shadow-md">
+              <IstiqlolLogo className="w-5 h-5 drop-shadow-[0_0_8px_rgba(0,255,100,0.6)]" />
+              <span>ISTIQLOL — Premium Fast Food & Mazali Taomlar</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">

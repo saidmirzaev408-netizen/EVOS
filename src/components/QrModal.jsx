@@ -73,7 +73,7 @@ export const QrModal = () => {
         </div>
 
         <h3 className="text-xl font-black text-gray-900 dark:text-white">
-          EVOS Restoran QR Menyusi
+          ISTIQLOL Restoran QR Menyusi
         </h3>
         <p className="text-xs text-gray-500 max-w-xs mx-auto">
           Stoldan turmasdan to'g'ridan-to'g'ri buyurtma bering — taomingiz stolingizga olib kelinadi!

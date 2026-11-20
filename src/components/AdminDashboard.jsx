@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { Icon } from './Icons';
+import { IstiqlolLogo } from './IstiqlolLogo';
 import { formatUZS } from '../utils/formatters';
 
 export const AdminDashboard = () => {
@@ -51,9 +52,7 @@ export const AdminDashboard = () => {
       {/* Admin Header */}
       <div className="bg-gray-900 text-white px-6 py-4 border-b border-gray-800 flex items-center justify-between shadow-md">
         <div className="flex items-center space-x-3">
-          <div className="w-9 h-9 rounded-xl bg-amber-500 text-gray-950 font-black flex items-center justify-center text-xl">
-            ⚙️
-          </div>
+          <IstiqlolLogo className="w-10 h-10 drop-shadow-[0_0_10px_rgba(0,255,100,0.6)]" />
           <div>
             <h1 className="text-lg font-black tracking-tight">{t('adminTitle')}</h1>
             <p className="text-xs text-gray-400">{t('adminSubtitle')}</p>

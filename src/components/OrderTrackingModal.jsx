@@ -89,7 +89,7 @@ export const OrderTrackingModal = () => {
                 🍽️
               </div>
               <span className="text-[9px] font-black text-white bg-black/80 px-2 py-0.5 rounded-full mt-1 border border-[#353B2F]">
-                EVOS Filiali
+                ISTIQLOL Filiali
               </span>
             </div>
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { Icon } from './Icons';
+import { IstiqlolLogo } from './IstiqlolLogo';
 import { formatUZS } from '../utils/formatters';
 
 export const LoyaltyProfileModal = () => {
@@ -62,11 +63,11 @@ export const LoyaltyProfileModal = () => {
             <div className="flex justify-between items-start">
               <div>
                 <span className="text-[10px] font-black uppercase text-amber-400 tracking-widest">
-                  EVOS Club Member
+                  ISTIQLOL Club A'zosi
                 </span>
                 <h3 className="text-2xl font-black mt-1">GOLD VIP TIER</h3>
               </div>
-              <span className="text-3xl">👑</span>
+              <IstiqlolLogo className="w-12 h-12 drop-shadow-[0_0_12px_rgba(0,255,100,0.6)]" />
             </div>
 
             <div className="mt-6 flex justify-between items-end">

@@ -199,7 +199,7 @@ export const LocationModal = () => {
         {/* Quick Branch selection */}
         <div className="space-y-2">
           <label className="text-xs font-bold text-gray-400 uppercase tracking-wider">
-            Yaqin EVOS Filiallari
+            Yaqin ISTIQLOL Filiallari
           </label>
           <div className="space-y-1.5 max-h-32 overflow-y-auto pr-1">
             {branches.map(b => (
