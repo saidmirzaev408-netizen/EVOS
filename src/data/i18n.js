@@ -2,7 +2,7 @@
 export const translations = {
   uz: {
     // Nav & Common
-    brandName: 'EVOS',
+    brandName: 'ISTIQLOL',
     brandSlogan: 'Mazzali va tezkor!',
     menu: 'Menyu',
     branches: 'Filiallar',
@@ -52,7 +52,7 @@ export const translations = {
     branchesSection: 'Bizning Filiallarimiz',
     branchesSubtitle: 'O\'zbekiston bo\'ylab 70+ dan ortiq qulay filiallar',
     reviewsSection: 'Mijozlarimiz fikrlari',
-    reviewsSubtitle: 'Har kuni minglab yurtdoshlarimiz EVOS taomlaridan bahramand bo\'lishadi',
+    reviewsSubtitle: 'Har kuni minglab yurtdoshlarimiz ISTIQLOL taomlaridan bahramand bo\'lishadi',
 
     // Product Card & Modal
     addToCart: 'Savatchaga',
@@ -116,7 +116,7 @@ export const translations = {
     payme: 'Payme',
     uzum: 'Uzum Bank',
     card: 'Bank kartasi orqali',
-    useLoyaltyPoints: 'EVOS bonus ballaridan foydalanish',
+    useLoyaltyPoints: 'ISTIQLOL bonus ballaridan foydalanish',
     pointsAvailable: 'Sizda mavjud',
     pointsUsed: 'ball chegirildi',
     cutleryReq: 'Pribor va salfetkalar qo\'shilsin',
@@ -128,7 +128,7 @@ export const translations = {
     orderNumber: 'Buyurtma raqami',
     estimatedArrival: 'Taxminiy yetkazish vaqti',
     orderStatus1: 'Buyurtma qabul qilindi',
-    orderStatus1Desc: 'EVOS restorani buyurtmani qabul qildi va tasdiqladi',
+    orderStatus1Desc: 'ISTIQLOL restorani buyurtmani qabul qildi va tasdiqladi',
     orderStatus2: 'Tayyorlanmoqda',
     orderStatus2Desc: 'Oshpazlarimiz taomingizni mehr bilan tayyorlamoqda',
     orderStatus3: 'Yetkazishga tayyor',
@@ -136,7 +136,7 @@ export const translations = {
     orderStatus4: 'Kuryer yo\'lda',
     orderStatus4Desc: 'Kuryer ko\'rsatilgan manzil tomon harakatlanmoqda',
     orderStatus5: 'Yetkazib berildi',
-    orderStatus5Desc: 'Yoqimli ishtaha! EVOS taomlaridan rohatlaning',
+    orderStatus5Desc: 'Yoqimli ishtaha! ISTIQLOL taomlaridan rohatlaning',
     courierInfo: 'Kuryer ma\'lumotlari',
     courierName: 'Dilshod Karimov',
     courierPhone: '+998 90 123 45 67',
@@ -145,8 +145,8 @@ export const translations = {
     simulateNext: 'Keyingi bosqichga o\'tish (Demo)',
 
     // Loyalty
-    loyaltyTitle: 'EVOS Club — Sodiqlik Tizimi',
-    loyaltySubtitle: 'Har bir buyurtmadan 5% gacha EVOS Coins to\'plang va bepul taomlarga almashtiring!',
+    loyaltyTitle: 'ISTIQLOL Club — Sodiqlik Tizimi',
+    loyaltySubtitle: 'Har bir buyurtmadan 5% gacha ISTIQLOL Coins to\'plang va bepul taomlarga almashtiring!',
     yourPoints: 'Sizning bonus ballaringiz',
     yourTier: 'Sodiqlik darajangiz',
     pointsToNextTier: 'Keyingi Gold darajasiga 25 000 ball qoldi',
@@ -158,7 +158,7 @@ export const translations = {
     noOrdersYet: 'Hali buyurtmalar mavjud emas',
 
     // Admin Dashboard
-    adminTitle: 'EVOS Boshqaruv Paneli (Admin)',
+    adminTitle: 'ISTIQLOL Boshqaruv Paneli (Admin)',
     adminSubtitle: 'Restoranlar tarmog\'i statistikasi va buyurtmalar nazorati',
     totalOrders: 'Jami buyurtmalar',
     todayRevenue: 'Bugungi tushum',
@@ -179,15 +179,15 @@ export const translations = {
     updateStatus: 'Statusni yangilash',
 
     // Chat
-    supportChatTitle: 'EVOS Onlayn Yordam',
+    supportChatTitle: 'ISTIQLOL Onlayn Yordam',
     supportOnline: 'Operatorlarimiz onlayn',
     chatPlaceholder: 'Savolingizni yozing...',
-    chatWelcome: 'Assalomu alaykum! EVOS xizmatiga xush kelibsiz. Qanday yordam bera olaman?'
+    chatWelcome: 'Assalomu alaykum! ISTIQLOL xizmatiga xush kelibsiz. Qanday yordam bera olaman?'
   },
 
   ru: {
     // Nav & Common
-    brandName: 'EVOS',
+    brandName: 'ISTIQLOL',
     brandSlogan: 'Вкусно и быстро!',
     menu: 'Меню',
     branches: 'Филиалы',
@@ -301,7 +301,7 @@ export const translations = {
     payme: 'Payme',
     uzum: 'Uzum Bank',
     card: 'Банковской картой',
-    useLoyaltyPoints: 'Использовать бонусы EVOS',
+    useLoyaltyPoints: 'Использовать бонусы ISTIQLOL',
     pointsAvailable: 'Доступно бонусов',
     pointsUsed: 'баллов списано',
     cutleryReq: 'Нужны приборы и салфетки',
@@ -313,7 +313,7 @@ export const translations = {
     orderNumber: 'Номер заказа',
     estimatedArrival: 'Ориентировочное прибытие',
     orderStatus1: 'Заказ принят',
-    orderStatus1Desc: 'Ресторан EVOS подтвердил заказ и начал обработку',
+    orderStatus1Desc: 'Ресторан ISTIQLOL подтвердил заказ и начал обработку',
     orderStatus2: 'Готовится',
     orderStatus2Desc: 'Повара готовят сочное мясо и свежую выпечку',
     orderStatus3: 'Готов к отправке',
@@ -321,7 +321,7 @@ export const translations = {
     orderStatus4: 'Курьер в пути',
     orderStatus4Desc: 'Курьер везет ваш горячий заказ по указанному адресу',
     orderStatus5: 'Доставлен',
-    orderStatus5Desc: 'Приятного аппетита! Наслаждайтесь вкусом EVOS',
+    orderStatus5Desc: 'Приятного аппетита! Наслаждайтесь вкусом ISTIQLOL',
     courierInfo: 'Информация о курьере',
     courierName: 'Дильшод Каримов',
     courierPhone: '+998 90 123 45 67',
@@ -330,7 +330,7 @@ export const translations = {
     simulateNext: 'Следующий этап (Демо)',
 
     // Loyalty
-    loyaltyTitle: 'EVOS Club — Программа лояльности',
+    loyaltyTitle: 'ISTIQLOL Club — Программа лояльности',
     loyaltySubtitle: 'Получайте до 5% кешбэка бонусами и обменивайте их на любимые блюда!',
     yourPoints: 'Ваши бонусные баллы',
     yourTier: 'Ваш уровень',
@@ -343,7 +343,7 @@ export const translations = {
     noOrdersYet: 'История заказов пока пуста',
 
     // Admin Dashboard
-    adminTitle: 'Панель управления EVOS (Admin)',
+    adminTitle: 'Панель управления ISTIQLOL (Admin)',
     adminSubtitle: 'Статистика сети и управление заказами в реальном времени',
     totalOrders: 'Всего заказов',
     todayRevenue: 'Выручка за сегодня',
@@ -364,15 +364,15 @@ export const translations = {
     updateStatus: 'Изменить статус',
 
     // Chat
-    supportChatTitle: 'Поддержка EVOS',
+    supportChatTitle: 'Поддержка ISTIQLOL',
     supportOnline: 'Операторы на связи',
     chatPlaceholder: 'Напишите сообщение...',
-    chatWelcome: 'Здравствуйте! Вас приветствует служба заботы EVOS. Чем можем помочь?'
+    chatWelcome: 'Здравствуйте! Вас приветствует служба заботы ISTIQLOL. Чем можем помочь?'
   },
 
   en: {
     // Nav & Common
-    brandName: 'EVOS',
+    brandName: 'ISTIQLOL',
     brandSlogan: 'Delicious & Fast!',
     menu: 'Menu',
     branches: 'Branches',
@@ -486,7 +486,7 @@ export const translations = {
     payme: 'Payme',
     uzum: 'Uzum Bank',
     card: 'Debit / Credit Card',
-    useLoyaltyPoints: 'Apply EVOS Loyalty Points',
+    useLoyaltyPoints: 'Apply ISTIQLOL Loyalty Points',
     pointsAvailable: 'Points available',
     pointsUsed: 'points deducted',
     cutleryReq: 'Include utensils & napkins',
@@ -498,7 +498,7 @@ export const translations = {
     orderNumber: 'Order Number',
     estimatedArrival: 'Estimated Arrival',
     orderStatus1: 'Order Received',
-    orderStatus1Desc: 'EVOS kitchen acknowledged and accepted your order',
+    orderStatus1Desc: 'ISTIQLOL kitchen acknowledged and accepted your order',
     orderStatus2: 'Preparing Meal',
     orderStatus2Desc: 'Chefs are grilling meats and baking fresh breads',
     orderStatus3: 'Ready for Courier',
@@ -506,7 +506,7 @@ export const translations = {
     orderStatus4: 'Courier on the Way',
     orderStatus4Desc: 'Courier is en route to your specified address',
     orderStatus5: 'Delivered',
-    orderStatus5Desc: 'Enjoy your meal! Bon appetit with EVOS',
+    orderStatus5Desc: 'Enjoy your meal! Bon appetit with ISTIQLOL',
     courierInfo: 'Courier Details',
     courierName: 'Dilshod Karimov',
     courierPhone: '+998 90 123 45 67',
@@ -515,7 +515,7 @@ export const translations = {
     simulateNext: 'Next Stage (Demo Simulation)',
 
     // Loyalty
-    loyaltyTitle: 'EVOS Club — Loyalty Program',
+    loyaltyTitle: 'ISTIQLOL Club — Loyalty Program',
     loyaltySubtitle: 'Earn up to 5% cashback on every order and redeem free delicious meals!',
     yourPoints: 'Your Loyalty Points',
     yourTier: 'Your Tier',
@@ -528,7 +528,7 @@ export const translations = {
     noOrdersYet: 'No past orders yet',
 
     // Admin Dashboard
-    adminTitle: 'EVOS Admin Management Console',
+    adminTitle: 'ISTIQLOL Admin Management Console',
     adminSubtitle: 'Real-time restaurant network metrics, inventory & dispatch',
     totalOrders: 'Total Orders',
     todayRevenue: "Today's Revenue",
@@ -549,10 +549,10 @@ export const translations = {
     updateStatus: 'Change Status',
 
     // Chat
-    supportChatTitle: 'EVOS Customer Support',
+    supportChatTitle: 'ISTIQLOL Customer Support',
     supportOnline: 'Live Support Agents Online',
     chatPlaceholder: 'Ask a question...',
-    chatWelcome: 'Hello! Welcome to EVOS Support. How can we help you today?'
+    chatWelcome: 'Hello! Welcome to ISTIQLOL Support. How can we help you today?'
   }
 };
 

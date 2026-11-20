@@ -35,16 +35,16 @@ export const ReviewsSection = () => {
   ];
 
   return (
-    <section className="py-14 bg-gray-50 dark:bg-gray-950">
+    <section className="py-14 bg-[#131512] border-b border-[#2B3026]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-xl mx-auto mb-10">
-          <span className="text-xs font-black uppercase text-evos-600 tracking-wider">
+          <span className="text-xs font-black uppercase text-[#F3BE53] tracking-wider">
             Mijozlarimiz Bahosi
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white tracking-tight mt-1">
+          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight mt-1">
             {t('reviewsSection')}
           </h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-sm text-gray-400 mt-2">
             {t('reviewsSubtitle')}
           </p>
         </div>
@@ -53,22 +53,22 @@ export const ReviewsSection = () => {
           {reviews.map(r => (
             <div
               key={r.id}
-              className="p-6 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm space-y-4"
+              className="p-6 rounded-3xl bg-[#23271E] border border-[#32382B] shadow-lg space-y-4"
             >
               <div className="flex items-center space-x-1 text-amber-500 text-sm">
                 {"★".repeat(r.rating)}
               </div>
-              <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 italic">
+              <p className="text-xs sm:text-sm text-gray-300 italic">
                 "{r.text}"
               </p>
-              <div className="flex items-center space-x-3 pt-3 border-t border-gray-100 dark:border-gray-800">
+              <div className="flex items-center space-x-3 pt-3 border-t border-[#32382B]">
                 <img
                   src={r.avatar}
                   alt={r.name}
-                  className="w-10 h-10 rounded-full object-cover"
+                  className="w-10 h-10 rounded-full object-cover border border-[#353B2F]"
                 />
                 <div>
-                  <h4 className="text-xs font-black text-gray-900 dark:text-white">{r.name}</h4>
+                  <h4 className="text-xs font-black text-white">{r.name}</h4>
                   <p className="text-[10px] text-gray-400">{r.role}</p>
                 </div>
               </div>

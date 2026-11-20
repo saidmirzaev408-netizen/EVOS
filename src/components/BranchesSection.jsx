@@ -6,18 +6,18 @@ export const BranchesSection = () => {
   const { lang, t, showToast, branchesData } = useApp();
 
   return (
-    <section className="py-14 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+    <section className="py-14 bg-[#161814] border-b border-[#2B3026]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8">
           <div>
-            <span className="text-xs font-black uppercase text-evos-600 tracking-wider">
+            <span className="text-xs font-black uppercase text-[#F3BE53] tracking-wider">
               EVOS Locations
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white tracking-tight mt-1">
+            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight mt-1">
               {t('branchesSection')}
             </h2>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
+            <p className="text-sm text-gray-400">
               {t('branchesSubtitle')}
             </p>
           </div>
@@ -27,7 +27,7 @@ export const BranchesSection = () => {
           {branchesData.map(branch => (
             <div
               key={branch.id}
-              className="rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between"
+              className="rounded-3xl overflow-hidden border border-[#32382B] bg-[#23271E] hover:border-[#F3BE53]/50 hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between"
             >
               <div>
                 {/* Branch Image */}

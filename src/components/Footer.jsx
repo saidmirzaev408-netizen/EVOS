@@ -9,13 +9,16 @@ export const Footer = () => {
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-9 h-9 rounded-xl bg-evos-600 flex items-center justify-center text-white font-black text-xl">
-                E
+              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#00A859] to-[#047857] flex items-center justify-center text-white font-black text-2xl tracking-tighter shadow-md">
+                I
               </div>
-              <span className="text-2xl font-black tracking-tight">EVOS</span>
+              <div className="flex items-center gap-1.5">
+                <span className="text-2xl font-black tracking-tight text-white">ISTIQLOL</span>
+                <span className="w-2 h-2 rounded-full bg-[#F3BE53]"></span>
+              </div>
             </div>
             <p className="text-xs text-gray-400 max-w-sm">
-              EVOS — O'zbekistondagi eng yirik va mashhur fast-food restoranlar tarmog'i. 2006-yildan buyon xalqimizga sifatli, mazali va tezkor taomlarni taqdim etib kelmoqda.
+              ISTIQLOL — O'zbekistondagi eng zamonaviy va mashhur fast-food restoranlar tarmog'i. Xalqimizga har kuni eng sifatli, mazali va tezkor taomlarni taqdim etib kelmoqda.
             </p>
             <div className="flex items-center space-x-3 text-sm text-gray-400">
               <span className="p-2 rounded-full bg-gray-900 hover:text-white cursor-pointer">Telegram</span>
@@ -26,13 +29,13 @@ export const Footer = () => {
 
           {/* Col 2: Navigation */}
           <div className="space-y-3">
-            <h4 className="text-xs font-black uppercase text-gray-300 tracking-wider">Menyu</h4>
+            <h4 className="text-xs font-black uppercase text-[#F3BE53] tracking-wider">Menyu</h4>
             <ul className="space-y-2 text-xs text-gray-400">
-              <li><a href="#menu-section" className="hover:text-white">Lavashlar</a></li>
-              <li><a href="#menu-section" className="hover:text-white">Burgerlar</a></li>
-              <li><a href="#menu-section" className="hover:text-white">Shaurma</a></li>
-              <li><a href="#menu-section" className="hover:text-white">Pitsa</a></li>
-              <li><a href="#menu-section" className="hover:text-white">Kombo taomlar</a></li>
+              <li><a href="#menu-section" className="hover:text-[#F3BE53]">Tandir Somsalar</a></li>
+              <li><a href="#menu-section" className="hover:text-[#F3BE53]">Pirojniy & Shirinliklar</a></li>
+              <li><a href="#menu-section" className="hover:text-[#F3BE53]">Hot-doglar</a></li>
+              <li><a href="#menu-section" className="hover:text-[#F3BE53]">Yaxna Moxitolar</a></li>
+              <li><a href="#menu-section" className="hover:text-[#F3BE53]">Qofe va Choy</a></li>
             </ul>
           </div>
 

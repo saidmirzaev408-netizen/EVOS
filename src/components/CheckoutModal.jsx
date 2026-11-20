@@ -394,4 +394,13 @@ export const CheckoutModal = () => {
               type="submit"
               className="bg-[#F3BE53] hover:bg-[#E5A934] text-[#131512] font-black text-sm px-8 py-3.5 rounded-full shadow-xl shadow-[#F3BE53]/25 active:scale-95 transition-transform"
             >
-              {orderType === 'table' ? `Stol #${activeTable?.number
+              {orderType === 'table' ? `Stol #${activeTable?.number || 12} ga buyurtma berish` : t('placeOrder')}
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  );
+};

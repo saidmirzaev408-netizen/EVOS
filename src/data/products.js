@@ -285,9 +285,9 @@ export const initialProducts = [
     id: 'hd-2',
     category: 'hotdogs',
     name: {
-      uz: 'EVOS Royal Hot-Dog',
-      ru: 'Роял Хот-дог с сыром',
-      en: 'EVOS Royal Hot Dog'
+      uz: 'ISTIQLOL Royal Hot-Dog',
+      ru: 'ИСТИКЛОЛ Роял Хот-дог с сыром',
+      en: 'ISTIQLOL Royal Hot Dog'
     },
     description: {
       uz: 'Yumshoq kunchutli bulochka, katta gril sosiskasi, erigan Chedder pishlog\'i va qovurilgan piyoz',
@@ -703,9 +703,9 @@ export const initialProducts = [
     id: 'burg-1',
     category: 'burgers',
     name: {
-      uz: 'EVOS Double Cheeseburger',
-      ru: 'EVOS Двойной Чизбургер',
-      en: 'EVOS Double Cheeseburger'
+      uz: 'ISTIQLOL Double Cheeseburger',
+      ru: 'ИСТИКЛОЛ Двойной Чизбургер',
+      en: 'ISTIQLOL Double Cheeseburger'
     },
     description: {
       uz: 'Ikki qavat 100% tabiiy mol go\'shti kotleti, erigan Chedder pishlog\'i, aysberg va karamellangan piyoz',
@@ -731,9 +731,9 @@ export const initialProducts = [
     id: 'cmb-1',
     category: 'combos',
     name: {
-      uz: 'EVOS Super Lavash & Somsa Kombo',
-      ru: 'EVOS Супер Лаваш и Самса Комбо',
-      en: 'EVOS Super Lavash & Samsa Combo'
+      uz: 'ISTIQLOL Super Lavash & Somsa Kombo',
+      ru: 'ИСТИКЛОЛ Супер Лаваш и Самса Комбо',
+      en: 'ISTIQLOL Super Lavash & Samsa Combo'
     },
     description: {
       uz: 'Klassik Go\'shtli Lavash + 2 dona Tandir Somsa + Qarsildoq Fri + Muzdek Pepsi 0.5L',
@@ -754,6 +754,7 @@ export const initialProducts = [
 ];
 
 export const samplePromoCodes = [
+  { code: 'ISTIQLOL2025', discountPercent: 15, minOrder: 50000, description: '15% off for all online orders' },
   { code: 'EVOS2025', discountPercent: 15, minOrder: 50000, description: '15% off for all online orders' },
   { code: 'MAZZA', discountPercent: 10, minOrder: 30000, description: '10% discount on entire menu' },
   { code: 'BEPUL', discountPercent: 0, freeDelivery: true, minOrder: 40000, description: 'Free delivery on your order' },

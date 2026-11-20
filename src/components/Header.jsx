@@ -24,7 +24,7 @@ export const Header = () => {
             <span className="bg-[#F3BE53] text-[#131512] text-[10px] uppercase font-black px-2 py-0.5 rounded-full shadow-sm">
               Aksiya
             </span>
-            <span className="text-gray-200">🔥 EVOS2025 promokodi bilan Somsa, Pirojniy va Moxitolarga 15% chegirma!</span>
+            <span className="text-gray-200">🔥 ISTIQLOL2025 promokodi bilan Somsa, Pirojniy va Moxitolarga 15% chegirma!</span>
           </div>
           <div className="hidden md:flex items-center space-x-6 text-gray-400 text-xs">
             <span className="flex items-center gap-1 hover:text-[#F3BE53] transition-colors">
@@ -48,14 +48,14 @@ export const Header = () => {
               className="flex items-center space-x-2.5 text-left group"
             >
               <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-[#00A859] to-[#047857] flex items-center justify-center text-white font-black text-2xl tracking-tighter shadow-lg shadow-[#00A859]/20 group-hover:scale-105 transition-transform">
-                E
+                I
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
                   <span className="text-2xl sm:text-3xl font-black tracking-tight text-white group-hover:text-[#F3BE53] transition-colors">
-                    EVOS
+                    ISTIQLOL
                   </span>
-                  <span className="w-2 h-2 rounded-full bg-[#F3BE53] animate-pulse"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#F3BE53] animate-pulse"></span>
                 </div>
                 <p className="text-[10px] font-bold text-gray-400 tracking-wider uppercase -mt-1 hidden sm:block">
                   {t('brandSlogan')}
