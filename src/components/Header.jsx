@@ -11,7 +11,7 @@ export const Header = () => {
     cart, loyaltyPoints,
     setIsCartOpen, setIsProfileOpen, setIsQrModalOpen,
     searchQuery, setSearchQuery, t, activeTable,
-    deliveryLocation, setIsLocationModalOpen
+    deliveryLocation, setIsLocationModalOpen, showToast
   } = useApp();
 
   const totalCartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -149,8 +149,13 @@ export const Header = () => {
 
             {/* Dark/Light mode toggle */}
             <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-full bg-[#23271E] hover:bg-[#2C3227] text-gray-300 border border-[#353B2F] transition-colors"
+              onClick={() => {
+                const nextTheme = theme === 'dark' ? 'light' : 'dark';
+                setTheme(nextTheme);
+                showToast(nextTheme === 'dark' ? '🌙 Tungi rejim yoqildi' : '☀️ Kunduzgi rejim yoqildi');
+              }}
+              className="p-2 rounded-full bg-[#23271E] hover:bg-[#2C3227] text-gray-300 border border-[#353B2F] transition-all hover:scale-105 active:scale-95 shadow-sm"
+              title={theme === 'dark' ? "Kunduzgi rejimga o'tish" : "Tungi rejimga o'tish"}
               aria-label="Mavzuni almashtirish"
             >
               <Icon name={theme === 'dark' ? 'sun' : 'moon'} className="w-4 h-4 text-[#F3BE53]" />

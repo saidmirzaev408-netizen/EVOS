@@ -54,14 +54,14 @@ export const Footer = () => {
           <div className="space-y-3">
             <h4 className="text-xs font-black uppercase text-gray-300 tracking-wider">Aloqa</h4>
             <p className="text-xs text-gray-400">Yagona Call-markaz:</p>
-            <p className="text-sm font-black text-evos-400">+998 71 200 00 00</p>
+            <p className="text-sm font-black text-[#F3BE53]">+998 71 200 00 00</p>
             <p className="text-xs text-gray-400">24 soat xizmatingizdamiz</p>
           </div>
 
         </div>
 
         <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-          <p>© 2026 EVOS Fast Food Chain. Barcha huquqlar himoyalangan.</p>
+          <p>© 2026 ISTIQLOL Fast Food Restoranlar Tarmog'i. Barcha huquqlar himoyalangan.</p>
           <div className="flex items-center space-x-4">
             <span>Maxfiylik siyosati</span>
             <span>Foydalanish shartlari</span>

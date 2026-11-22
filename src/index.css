@@ -2,31 +2,211 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Set smooth base background and text */
-body {
+/* Smooth base theme transition */
+html, body {
   margin: 0;
-  background-color: #131512;
-  color: #F4F5F2;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Custom Scrollbars matching luxury dark olive & gold */
+/* -------------------------------------------------------------
+   DARK MODE (Default / html.dark)
+   ------------------------------------------------------------- */
+html.dark body {
+  background-color: #131512;
+  color: #F4F5F2;
+}
+
+/* -------------------------------------------------------------
+   LIGHT MODE (html.light / html:not(.dark))
+   ------------------------------------------------------------- */
+html:not(.dark) body,
+html.light body {
+  background-color: #F6F8F5;
+  color: #111827;
+}
+
+/* Main background wrappers */
+html:not(.dark) .min-h-screen,
+html.light .min-h-screen,
+html:not(.dark) section#menu-section,
+html.light section#menu-section,
+html:not(.dark) .bg-\[\#131512\],
+html.light .bg-\[\#131512\] {
+  background-color: #F6F8F5 !important;
+  color: #111827 !important;
+}
+
+/* Headers, sticky top bars, nav bars */
+html:not(.dark) header,
+html.light header,
+html:not(.dark) .bg-\[\#161814\]\/95,
+html.light .bg-\[\#161814\]\/95,
+html:not(.dark) .bg-\[\#161814\],
+html.light .bg-\[\#161814\] {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-color: #E2E7DE !important;
+  color: #111827 !important;
+}
+
+/* Top Notification / Promo Bar */
+html:not(.dark) .bg-\[\#1F231A\],
+html.light .bg-\[\#1F231A\] {
+  background-color: #EDF3E8 !important;
+  border-color: #DFE6DA !important;
+  color: #374151 !important;
+}
+html:not(.dark) .bg-\[\#1F231A\] span,
+html.light .bg-\[\#1F231A\] span {
+  color: #374151 !important;
+}
+html:not(.dark) .bg-\[\#1F231A\] .bg-\[\#F3BE53\],
+html.light .bg-\[\#1F231A\] .bg-\[\#F3BE53\] {
+  color: #131512 !important;
+}
+
+/* Cards (Product Cards, Category Cards, Branch Cards, Reviews) */
+html:not(.dark) .bg-\[\#22261E\],
+html.light .bg-\[\#22261E\],
+html:not(.dark) .bg-\[\#23271E\],
+html.light .bg-\[\#23271E\] {
+  background-color: #FFFFFF !important;
+  border-color: #E2E7DE !important;
+  color: #111827 !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .bg-\[\#1C1F18\],
+html.light .bg-\[\#1C1F18\],
+html:not(.dark) .bg-\[\#181B15\],
+html.light .bg-\[\#181B15\] {
+  background-color: #FFFFFF !important;
+  border-color: #E5E9E1 !important;
+  color: #111827 !important;
+}
+
+/* Inner panels, containers, inputs */
+html:not(.dark) .bg-\[\#121410\],
+html.light .bg-\[\#121410\],
+html:not(.dark) .bg-\[\#171914\],
+html.light .bg-\[\#171914\],
+html:not(.dark) .bg-\[\#1A1D17\],
+html.light .bg-\[\#1A1D17\],
+html:not(.dark) .bg-\[\#151713\],
+html.light .bg-\[\#151713\] {
+  background-color: #F1F4EE !important;
+  border-color: #E2E7DE !important;
+  color: #111827 !important;
+}
+
+/* Secondary interactive controls and buttons */
+html:not(.dark) .bg-\[\#242820\],
+html.light .bg-\[\#242820\],
+html:not(.dark) .bg-\[\#20251B\],
+html.light .bg-\[\#20251B\],
+html:not(.dark) .bg-\[\#1E2319\],
+html.light .bg-\[\#1E2319\],
+html:not(.dark) .bg-\[\#22271D\],
+html.light .bg-\[\#22271D\],
+html:not(.dark) .bg-\[\#242A1E\],
+html.light .bg-\[\#242A1E\] {
+  background-color: #EAEFE6 !important;
+  border-color: #DAE2D5 !important;
+  color: #1F2937 !important;
+}
+
+/* Borders in light mode */
+html:not(.dark) .border-\[\#2B3026\],
+html.light .border-\[\#2B3026\],
+html:not(.dark) .border-\[\#32382B\],
+html.light .border-\[\#32382B\],
+html:not(.dark) .border-\[\#353B2F\],
+html.light .border-\[\#353B2F\],
+html:not(.dark) .border-\[\#2C3227\],
+html.light .border-\[\#2C3227\],
+html:not(.dark) .border-\[\#303728\],
+html.light .border-\[\#303728\],
+html:not(.dark) .border-\[\#303828\],
+html.light .border-\[\#303828\],
+html:not(.dark) .border-\[\#37402F\],
+html.light .border-\[\#37402F\],
+html:not(.dark) .border-\[\#2B3124\],
+html.light .border-\[\#2B3124\],
+html:not(.dark) .border-\[\#2B3224\],
+html.light .border-\[\#2B3224\],
+html:not(.dark) .border-\[\#282E22\],
+html.light .border-\[\#282E22\],
+html:not(.dark) .border-\[\#3A4330\],
+html.light .border-\[\#3A4330\],
+html:not(.dark) .border-\[\#2E3626\],
+html.light .border-\[\#2E3626\] {
+  border-color: #E2E7DE !important;
+}
+
+/* Typography in light mode */
+html:not(.dark) .text-white,
+html.light .text-white {
+  color: #111827 !important;
+}
+
+html:not(.dark) .text-gray-300,
+html.light .text-gray-300,
+html:not(.dark) .text-gray-200,
+html.light .text-gray-200 {
+  color: #4B5563 !important;
+}
+
+html:not(.dark) .text-gray-400,
+html.light .text-gray-400 {
+  color: #6B7280 !important;
+}
+
+/* Preserving colored text & elements */
+html:not(.dark) .bg-\[\#F3BE53\],
+html.light .bg-\[\#F3BE53\],
+html:not(.dark) .bg-\[\#F3BE53\] *,
+html.light .bg-\[\#F3BE53\] * {
+  color: #131512 !important;
+}
+
+html:not(.dark) .bg-\[\#00A859\],
+html.light .bg-\[\#00A859\],
+html:not(.dark) .bg-\[\#00A859\] *,
+html.light .bg-\[\#00A859\] *,
+html:not(.dark) .bg-emerald-600,
+html.light .bg-emerald-600,
+html:not(.dark) .bg-emerald-600 *,
+html.light .bg-emerald-600 * {
+  color: #FFFFFF !important;
+}
+
+/* Custom Scrollbars */
+html.dark ::-webkit-scrollbar-track {
+  background: rgba(20, 23, 18, 0.6);
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #353B2F;
+}
+html:not(.dark) ::-webkit-scrollbar-track,
+html.light ::-webkit-scrollbar-track {
+  background: #EAEFE6;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb,
+html.light ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+}
+
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
-::-webkit-scrollbar-track {
-  background: rgba(20, 23, 18, 0.6);
-}
 ::-webkit-scrollbar-thumb {
-  background: #353B2F;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #F3BE53;
+  background: #F3BE53 !important;
 }
 
-/* Hide scrollbar for category tabs */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -34,4 +214,3 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-

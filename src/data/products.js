@@ -1,4 +1,4 @@
-// EVOS Products Data with Multi-language support and realistic pricing in Uzbek Soums (UZS)
+// ISTIQLOL Products Data with Multi-language support and realistic pricing in Uzbek Soums (UZS)
 export const initialCategories = [
   { id: 'all', name: { uz: 'Barchasi', ru: 'Все', en: 'All' }, icon: '✨' },
   { id: 'somsa', name: { uz: 'Somsa', ru: 'Самса', en: 'Samsa' }, icon: '🥟' },
@@ -55,7 +55,7 @@ export const initialProducts = [
       en: 'Multi-layered flaky buttery pastry stuffed with tender beef and crushed cumin'
     },
     price: 15000,
-    image: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=800&q=80',
     calories: '330 kcal',
     weight: '170g',
     rating: 4.88,
@@ -78,7 +78,7 @@ export const initialProducts = [
       en: 'Melted stretchy mozzarella cheese infused with aromatic fresh garden herbs'
     },
     price: 13000,
-    image: 'https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=800&q=80',
     calories: '280 kcal',
     weight: '150g',
     rating: 4.8,
@@ -101,7 +101,7 @@ export const initialProducts = [
       en: 'Lean chicken breast strips with sweet onions and gentle oriental spices'
     },
     price: 12000,
-    image: 'https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1606471191009-63994c53433b?auto=format&fit=crop&w=800&q=80',
     calories: '260 kcal',
     weight: '155g',
     rating: 4.75,
@@ -124,7 +124,7 @@ export const initialProducts = [
       en: 'Autumn sweet pumpkin roasted with butter and a dash of black pepper'
     },
     price: 9000,
-    image: 'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80',
     calories: '210 kcal',
     weight: '150g',
     rating: 4.7,
@@ -272,7 +272,7 @@ export const initialProducts = [
     },
     price: 22000,
     oldPrice: 25000,
-    image: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1627059173264-b5a81e3cf5ea?auto=format&fit=crop&w=800&q=80',
     calories: '390 kcal',
     weight: '200g',
     rating: 4.88,
@@ -764,14 +764,14 @@ export const samplePromoCodes = [
 export const loyaltyRewards = [
   { id: 'rew-1', name: 'Pepsi 0.5L', points: 8000, category: 'napitkalar', image: 'https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=400&q=80' },
   { id: 'rew-2', name: 'Tandir Somsa', points: 10000, category: 'somsa', image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80' },
-  { id: 'rew-3', name: 'Fransuzcha Hot-Dog', points: 16000, category: 'hotdogs', image: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=400&q=80' },
+  { id: 'rew-3', name: 'Fransuzcha Hot-Dog', points: 16000, category: 'hotdogs', image: 'https://images.unsplash.com/photo-1627059173264-b5a81e3cf5ea?auto=format&fit=crop&w=400&q=80' },
   { id: 'rew-4', name: 'Klassik Medovik', points: 18000, category: 'pirojniy', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80' }
 ];
 
 export const categoryFallbacks = {
   somsa: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80',
   pirojniy: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80',
-  hotdogs: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=800&q=80',
+  hotdogs: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=800&q=80',
   coffee: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=80',
   tea: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
   mojito: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80',

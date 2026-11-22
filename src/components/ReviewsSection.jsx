@@ -19,7 +19,7 @@ export const ReviewsSection = () => {
       name: 'Malika Karimova',
       role: 'Toshkent',
       rating: 5,
-      text: 'EVOS Double Cheeseburger haqiqiy lazzat! Ilovasidagi sodiqlik tizimi ham juda yoqdi, yig\'ilgan ballarga bepul fri oldim.',
+      text: 'ISTIQLOL Double Cheeseburger haqiqiy lazzat! Ilovasidagi sodiqlik tizimi ham juda yoqdi, yig\'ilgan ballarga bepul fri oldim.',
       date: '16.11.2026',
       avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80'
     },

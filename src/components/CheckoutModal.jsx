@@ -352,7 +352,7 @@ export const CheckoutModal = () => {
                   className="rounded accent-[#F3BE53] w-4 h-4"
                 />
                 <label htmlFor="useCoins" className="text-xs font-bold text-amber-200 cursor-pointer">
-                  ⭐ EVOS Coins ishlatish (Mavjud: {loyaltyPoints.toLocaleString()} ball)
+                  ⭐ ISTIQLOL Coins ishlatish (Mavjud: {loyaltyPoints.toLocaleString()} ball)
                 </label>
               </div>
               {useCoins && (

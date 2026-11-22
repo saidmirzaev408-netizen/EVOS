@@ -27,7 +27,7 @@ export function App() {
   const { appMode } = useApp();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#131512] text-[#F4F5F2] antialiased font-sans selection:bg-[#F3BE53] selection:text-[#131512]">
+    <div className="min-h-screen flex flex-col bg-[#F4F6F2] dark:bg-[#131512] text-gray-900 dark:text-[#F4F5F2] antialiased font-sans selection:bg-[#F3BE53] selection:text-[#131512] transition-colors duration-300">
       <ToastContainer />
       
       {appMode === 'admin' ? (

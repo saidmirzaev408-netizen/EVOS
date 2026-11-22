@@ -237,7 +237,7 @@ export const translations = {
     branchesSection: 'Наши Рестораны',
     branchesSubtitle: 'Более 70 современных филиалов по всему Узбекистану',
     reviewsSection: 'Отзывы наших гостей',
-    reviewsSubtitle: 'Каждый день сотни тысяч людей выбирают вкус и качество EVOS',
+    reviewsSubtitle: 'Каждый день сотни тысяч людей выбирают вкус и качество ISTIQLOL',
 
     // Product Card & Modal
     addToCart: 'В корзину',

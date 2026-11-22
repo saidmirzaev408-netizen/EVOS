@@ -10,14 +10,14 @@ export const AppProvider = ({ children }) => {
   // Language: 'uz', 'ru', 'en'
   const [lang, setLang] = useState(() => localStorage.getItem('evos_lang') || 'uz');
   // Theme: 'light', 'dark'
-  const [theme, setTheme] = useState(() => localStorage.getItem('evos_theme') || 'light');
+  const [theme, setTheme] = useState(() => localStorage.getItem('evos_theme') || 'dark');
   // App Mode: 'client' or 'admin'
   const [appMode, setAppMode] = useState('client');
   // Delivery Location state
   const [deliveryLocation, setDeliveryLocation] = useState(() => {
     const saved = localStorage.getItem('evos_location');
     if (saved) {
-      try { return JSON.parse(saved); } catch (e) {}
+      try { return JSON.parse(saved); } catch (e) { }
     }
     return {
       city: 'Toshkent',
@@ -39,7 +39,7 @@ export const AppProvider = ({ children }) => {
         if (Array.isArray(parsed) && parsed.length > 0) {
           return parsed;
         }
-      } catch (e) {}
+      } catch (e) { }
     }
     return initialProducts;
   });
@@ -47,7 +47,7 @@ export const AppProvider = ({ children }) => {
   const [cart, setCart] = useState(() => {
     const saved = localStorage.getItem('evos_cart');
     if (saved) {
-      try { return JSON.parse(saved); } catch (e) {}
+      try { return JSON.parse(saved); } catch (e) { }
     }
     return [];
   });
@@ -55,7 +55,7 @@ export const AppProvider = ({ children }) => {
   const [favorites, setFavorites] = useState(() => {
     const saved = localStorage.getItem('evos_favorites');
     if (saved) {
-      try { return JSON.parse(saved); } catch (e) {}
+      try { return JSON.parse(saved); } catch (e) { }
     }
     return ['lav-1', 'burg-1', 'piz-1'];
   });
@@ -77,7 +77,7 @@ export const AppProvider = ({ children }) => {
   const [orders, setOrders] = useState(() => {
     const saved = localStorage.getItem('evos_orders');
     if (saved) {
-      try { return JSON.parse(saved); } catch (e) {}
+      try { return JSON.parse(saved); } catch (e) { }
     }
     return [
       {
@@ -141,7 +141,7 @@ export const AppProvider = ({ children }) => {
       }
       const saved = localStorage.getItem('evos_active_table');
       if (saved) return JSON.parse(saved);
-    } catch (e) {}
+    } catch (e) { }
     return { number: 12, branch: 'Chilonzor', active: false };
   });
 
@@ -149,13 +149,27 @@ export const AppProvider = ({ children }) => {
     localStorage.setItem('evos_active_table', JSON.stringify(activeTable));
   }, [activeTable]);
 
+  // Show welcome toast when opened via Table QR code URL parameter
+  useEffect(() => {
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tableParam = urlParams.get('table');
+      const branchParam = urlParams.get('branch');
+      if (tableParam) {
+        showToast(`🍽️ Xush kelibsiz! #${tableParam}-stoldan buyurtma berish faollashtirildi (${branchParam || 'Chilonzor'})`);
+      }
+    } catch (e) { }
+  }, []);
+
   // Theme toggle
   useEffect(() => {
     localStorage.setItem('evos_theme', theme);
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
     } else {
       document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
     }
   }, [theme]);
 
