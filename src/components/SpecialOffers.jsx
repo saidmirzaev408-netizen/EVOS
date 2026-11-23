@@ -17,8 +17,8 @@ export const SpecialOffers = () => {
       discount: '15 000 UZS',
       subtitle: 'Tandir somsa va muzdek moxito uchun maxsus chegirma',
       code: 'SOMSA',
-      bg: 'from-[#252A1E] to-[#1C1F18] border border-[#F3BE53]/40',
-      badgeBg: 'bg-[#F3BE53] text-[#131512]',
+      bg: 'from-[#34111D] to-[#240C14] border border-[#F3BE53]/40',
+      badgeBg: 'bg-[#F3BE53] text-[#17080E]',
       image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80'
     },
     {
@@ -27,8 +27,8 @@ export const SpecialOffers = () => {
       discount: '15% OFF',
       subtitle: 'Pirojniy, hot-dog va qofega 15% tejamkorlik',
       code: 'ISTIQLOL2025',
-      bg: 'from-[#2E2818] to-[#1C1A14] border border-[#E5A934]/40',
-      badgeBg: 'bg-[#E5A934] text-[#131512]',
+      bg: 'from-[#3E1422] to-[#280E17] border border-[#E5A934]/40',
+      badgeBg: 'bg-[#E5A934] text-[#17080E]',
       image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80'
     },
     {
@@ -37,9 +37,9 @@ export const SpecialOffers = () => {
       discount: 'BEPUL',
       subtitle: '40 000 UZS dan yuqori buyurtmalar uchun mutlaqo bepul',
       code: 'BEPUL',
-      bg: 'from-[#192A20] to-[#131F18] border border-[#00A859]/40',
-      badgeBg: 'bg-[#00A859] text-white',
-      image: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=400&q=80'
+      bg: 'from-[#4A1626] to-[#2A0D16] border border-[#BA1D3D]/50',
+      badgeBg: 'bg-[#BA1D3D] text-white',
+      image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80'
     }
   ];
 
@@ -50,10 +50,10 @@ export const SpecialOffers = () => {
           <div>
             <div className="inline-flex items-center space-x-1.5 text-[#F3BE53] text-xs font-black uppercase tracking-wider mb-1">
               <span>🎁</span>
-              <span>Katta chegirmalar</span>
+              <span>{t('specialOffersSub')}</span>
             </div>
             <h2 className="text-2xl font-black text-white tracking-tight">
-              Aksiyalar va Maxsus Takliflar
+              {t('specialOffers')}
             </h2>
           </div>
         </div>

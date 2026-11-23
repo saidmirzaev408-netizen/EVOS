@@ -39,12 +39,12 @@ export const FoodMenu = () => {
               <span>Recomendation & Special Menu</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-              {selectedCategory === 'all' ? 'Tavsiya etiladigan taomlar' : `${categoryTitle}`}
+              {selectedCategory === 'all' ? t('featuredMeals') : categoryTitle}
             </h2>
           </div>
 
-          <div className="text-xs sm:text-sm font-bold text-gray-400 bg-[#1C1F18] border border-[#2F3528] px-3.5 py-1.5 rounded-full">
-            {filteredProducts.length} ta mahsulot mavjud
+          <div className="text-xs sm:text-sm font-bold text-gray-400 bg-[#1C1F18] border border-[#4A1A27] px-3.5 py-1.5 rounded-full">
+            {filteredProducts.length} {t('all')}
           </div>
         </div>
 

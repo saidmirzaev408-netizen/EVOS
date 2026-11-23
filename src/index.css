@@ -9,71 +9,210 @@ html, body {
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* -------------------------------------------------------------
-   DARK MODE (Default / html.dark)
-   ------------------------------------------------------------- */
+/* =============================================================
+   1. DARK MODE (LUXURY ROYAL BURGUNDY / BARDOVIY & GOLD)
+   ============================================================= */
 html.dark body {
-  background-color: #131512;
-  color: #F4F5F2;
+  background-color: #17080E;
+  color: #FFF0F3;
 }
 
-/* -------------------------------------------------------------
-   LIGHT MODE (html.light / html:not(.dark))
-   ------------------------------------------------------------- */
+/* Main background wrappers in Dark Burgundy */
+html.dark .min-h-screen,
+html.dark section#menu-section,
+html.dark .bg-\[\#131512\] {
+  background-color: #17080E !important;
+  color: #FFF0F3 !important;
+}
+
+/* Headers, sticky top bars, nav bars in Dark Burgundy */
+html.dark header,
+html.dark .bg-\[\#161814\]\/95,
+html.dark .bg-\[\#161814\] {
+  background-color: rgba(28, 9, 16, 0.96) !important;
+  border-color: #461723 !important;
+  color: #FFF0F3 !important;
+}
+
+/* Top Notification / Promo Bar in Dark Burgundy */
+html.dark .bg-\[\#1F231A\] {
+  background-color: #240B13 !important;
+  border-color: #3B111D !important;
+  color: #E5BAC5 !important;
+}
+html.dark .bg-\[\#1F231A\] span {
+  color: #E5BAC5 !important;
+}
+html.dark .bg-\[\#1F231A\] .bg-\[\#F3BE53\] {
+  color: #17080E !important;
+}
+
+/* Cards (Product Cards, Category Cards, Branch Cards, Reviews) in Dark Burgundy */
+html.dark .bg-\[\#22261E\],
+html.dark .bg-\[\#23271E\] {
+  background-color: #260D16 !important;
+  border-color: #481825 !important;
+  color: #FFF0F3 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
+}
+html.dark .bg-\[\#22261E\]:hover,
+html.dark .bg-\[\#23271E\]:hover {
+  border-color: #BA1D3D !important;
+  box-shadow: 0 14px 34px rgba(186, 29, 61, 0.28) !important;
+}
+
+/* Modals & Drawers in Dark Burgundy */
+html.dark .bg-\[\#1C1F18\],
+html.dark .bg-\[\#181B15\] {
+  background-color: #230C14 !important;
+  border-color: #4A1927 !important;
+  color: #FFF0F3 !important;
+}
+
+/* Inner panels, containers, inputs in Dark Burgundy */
+html.dark .bg-\[\#121410\],
+html.dark .bg-\[\#171914\],
+html.dark .bg-\[\#1A1D17\],
+html.dark .bg-\[\#151713\] {
+  background-color: #1C0810 !important;
+  border-color: #3E131E !important;
+  color: #FFF0F3 !important;
+}
+
+/* Secondary controls, tabs, buttons in Dark Burgundy */
+html.dark .bg-\[\#242820\],
+html.dark .bg-\[\#20251B\],
+html.dark .bg-\[\#1E2319\],
+html.dark .bg-\[\#22271D\],
+html.dark .bg-\[\#242A1E\] {
+  background-color: #2F101B !important;
+  border-color: #4B1A28 !important;
+  color: #E5BAC5 !important;
+}
+
+/* Dark Mode Borders */
+html.dark .border-\[\#2B3026\],
+html.dark .border-\[\#32382B\],
+html.dark .border-\[\#353B2F\],
+html.dark .border-\[\#2C3227\],
+html.dark .border-\[\#303728\],
+html.dark .border-\[\#303828\],
+html.dark .border-\[\#37402F\],
+html.dark .border-\[\#2B3124\],
+html.dark .border-\[\#2B3224\],
+html.dark .border-\[\#282E22\],
+html.dark .border-\[\#3A4330\],
+html.dark .border-\[\#2E3626\] {
+  border-color: #461723 !important;
+}
+
+/* Dark Mode Typography */
+html.dark .text-white {
+  color: #FFF0F3 !important;
+}
+html.dark .text-gray-300,
+html.dark .text-gray-200 {
+  color: #E5BAC5 !important;
+}
+html.dark .text-gray-400 {
+  color: #B88A96 !important;
+}
+
+/* Primary Signature Action Buttons -> Royal Burgundy Gradient */
+.bg-\[\#00A859\],
+button.bg-evos-600,
+.bg-emerald-600 {
+  background: linear-gradient(135deg, #9B1832 0%, #BA1D3D 55%, #800F26 100%) !important;
+  box-shadow: 0 4px 18px rgba(186, 29, 61, 0.4) !important;
+  color: #FFFFFF !important;
+}
+.bg-\[\#00A859\]:hover,
+button.bg-evos-600:hover,
+.bg-emerald-600:hover {
+  background: linear-gradient(135deg, #B01B3A 0%, #C92246 55%, #92132F 100%) !important;
+}
+
+.text-\[\#00A859\],
+.text-emerald-400,
+.text-emerald-500 {
+  color: #FF2E5B !important;
+}
+
+/* Royal Gold accents on Burgundy */
+.bg-\[\#F3BE53\],
+.bg-\[\#F3BE53\] * {
+  color: #17080E !important;
+}
+
+/* Scrollbars in Dark Burgundy */
+html.dark ::-webkit-scrollbar-track {
+  background: rgba(23, 8, 14, 0.85);
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #4B1825;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #BA1D3D !important;
+}
+
+
+/* =============================================================
+   2. LIGHT MODE (SOFT ROSE-CREAM & VELVET BURGUNDY)
+   ============================================================= */
 html:not(.dark) body,
 html.light body {
-  background-color: #F6F8F5;
-  color: #111827;
+  background-color: #FCF6F7;
+  color: #200810;
 }
 
-/* Main background wrappers */
+/* Main background wrappers in Light Mode */
 html:not(.dark) .min-h-screen,
 html.light .min-h-screen,
 html:not(.dark) section#menu-section,
 html.light section#menu-section,
 html:not(.dark) .bg-\[\#131512\],
 html.light .bg-\[\#131512\] {
-  background-color: #F6F8F5 !important;
-  color: #111827 !important;
+  background-color: #FCF6F7 !important;
+  color: #200810 !important;
 }
 
-/* Headers, sticky top bars, nav bars */
+/* Headers, sticky top bars, nav bars in Light Mode */
 html:not(.dark) header,
 html.light header,
 html:not(.dark) .bg-\[\#161814\]\/95,
 html.light .bg-\[\#161814\]\/95,
 html:not(.dark) .bg-\[\#161814\],
 html.light .bg-\[\#161814\] {
-  background-color: rgba(255, 255, 255, 0.96) !important;
-  border-color: #E2E7DE !important;
-  color: #111827 !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-color: #F0D6DC !important;
+  color: #200810 !important;
 }
 
-/* Top Notification / Promo Bar */
+/* Top Notification / Promo Bar in Light Mode */
 html:not(.dark) .bg-\[\#1F231A\],
 html.light .bg-\[\#1F231A\] {
-  background-color: #EDF3E8 !important;
-  border-color: #DFE6DA !important;
-  color: #374151 !important;
+  background-color: #F8E8EC !important;
+  border-color: #F0D3D9 !important;
+  color: #541B28 !important;
 }
 html:not(.dark) .bg-\[\#1F231A\] span,
 html.light .bg-\[\#1F231A\] span {
-  color: #374151 !important;
+  color: #541B28 !important;
 }
 html:not(.dark) .bg-\[\#1F231A\] .bg-\[\#F3BE53\],
 html.light .bg-\[\#1F231A\] .bg-\[\#F3BE53\] {
-  color: #131512 !important;
+  color: #17080E !important;
 }
 
-/* Cards (Product Cards, Category Cards, Branch Cards, Reviews) */
+/* Cards (Product Cards, Category Cards, Branch Cards, Reviews) in Light Mode */
 html:not(.dark) .bg-\[\#22261E\],
 html.light .bg-\[\#22261E\],
 html:not(.dark) .bg-\[\#23271E\],
 html.light .bg-\[\#23271E\] {
   background-color: #FFFFFF !important;
-  border-color: #E2E7DE !important;
-  color: #111827 !important;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05) !important;
+  border-color: #F0D6DC !important;
+  color: #200810 !important;
+  box-shadow: 0 6px 22px rgba(155, 24, 50, 0.06) !important;
 }
 
 html:not(.dark) .bg-\[\#1C1F18\],
@@ -81,11 +220,11 @@ html.light .bg-\[\#1C1F18\],
 html:not(.dark) .bg-\[\#181B15\],
 html.light .bg-\[\#181B15\] {
   background-color: #FFFFFF !important;
-  border-color: #E5E9E1 !important;
-  color: #111827 !important;
+  border-color: #F0D6DC !important;
+  color: #200810 !important;
 }
 
-/* Inner panels, containers, inputs */
+/* Inner panels, containers, inputs in Light Mode */
 html:not(.dark) .bg-\[\#121410\],
 html.light .bg-\[\#121410\],
 html:not(.dark) .bg-\[\#171914\],
@@ -94,12 +233,12 @@ html:not(.dark) .bg-\[\#1A1D17\],
 html.light .bg-\[\#1A1D17\],
 html:not(.dark) .bg-\[\#151713\],
 html.light .bg-\[\#151713\] {
-  background-color: #F1F4EE !important;
-  border-color: #E2E7DE !important;
-  color: #111827 !important;
+  background-color: #F9EEF1 !important;
+  border-color: #ECD0D7 !important;
+  color: #200810 !important;
 }
 
-/* Secondary interactive controls and buttons */
+/* Secondary interactive controls and buttons in Light Mode */
 html:not(.dark) .bg-\[\#242820\],
 html.light .bg-\[\#242820\],
 html:not(.dark) .bg-\[\#20251B\],
@@ -110,12 +249,12 @@ html:not(.dark) .bg-\[\#22271D\],
 html.light .bg-\[\#22271D\],
 html:not(.dark) .bg-\[\#242A1E\],
 html.light .bg-\[\#242A1E\] {
-  background-color: #EAEFE6 !important;
-  border-color: #DAE2D5 !important;
-  color: #1F2937 !important;
+  background-color: #F4E2E6 !important;
+  border-color: #E8C6CE !important;
+  color: #471420 !important;
 }
 
-/* Borders in light mode */
+/* Borders in Light Mode */
 html:not(.dark) .border-\[\#2B3026\],
 html.light .border-\[\#2B3026\],
 html:not(.dark) .border-\[\#32382B\],
@@ -140,60 +279,35 @@ html:not(.dark) .border-\[\#3A4330\],
 html.light .border-\[\#3A4330\],
 html:not(.dark) .border-\[\#2E3626\],
 html.light .border-\[\#2E3626\] {
-  border-color: #E2E7DE !important;
+  border-color: #F0D6DC !important;
 }
 
-/* Typography in light mode */
+/* Typography in Light Mode */
 html:not(.dark) .text-white,
 html.light .text-white {
-  color: #111827 !important;
+  color: #200810 !important;
 }
 
 html:not(.dark) .text-gray-300,
 html.light .text-gray-300,
 html:not(.dark) .text-gray-200,
 html.light .text-gray-200 {
-  color: #4B5563 !important;
+  color: #501B27 !important;
 }
 
 html:not(.dark) .text-gray-400,
 html.light .text-gray-400 {
-  color: #6B7280 !important;
+  color: #824553 !important;
 }
 
-/* Preserving colored text & elements */
-html:not(.dark) .bg-\[\#F3BE53\],
-html.light .bg-\[\#F3BE53\],
-html:not(.dark) .bg-\[\#F3BE53\] *,
-html.light .bg-\[\#F3BE53\] * {
-  color: #131512 !important;
-}
-
-html:not(.dark) .bg-\[\#00A859\],
-html.light .bg-\[\#00A859\],
-html:not(.dark) .bg-\[\#00A859\] *,
-html.light .bg-\[\#00A859\] *,
-html:not(.dark) .bg-emerald-600,
-html.light .bg-emerald-600,
-html:not(.dark) .bg-emerald-600 *,
-html.light .bg-emerald-600 * {
-  color: #FFFFFF !important;
-}
-
-/* Custom Scrollbars */
-html.dark ::-webkit-scrollbar-track {
-  background: rgba(20, 23, 18, 0.6);
-}
-html.dark ::-webkit-scrollbar-thumb {
-  background: #353B2F;
-}
+/* Scrollbars in Light Mode */
 html:not(.dark) ::-webkit-scrollbar-track,
 html.light ::-webkit-scrollbar-track {
-  background: #EAEFE6;
+  background: #F9EEF1;
 }
 html:not(.dark) ::-webkit-scrollbar-thumb,
 html.light ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #D9B3BC;
 }
 
 ::-webkit-scrollbar {
@@ -204,7 +318,7 @@ html.light ::-webkit-scrollbar-thumb {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #F3BE53 !important;
+  background: #BA1D3D !important;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -213,4 +327,27 @@ html.light ::-webkit-scrollbar-thumb {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Google Translate clean integration */
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+body {
+  top: 0px !important;
+  position: static !important;
+}
+#google_translate_element {
+  display: none !important;
+}
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }

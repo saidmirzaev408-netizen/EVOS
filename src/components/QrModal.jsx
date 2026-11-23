@@ -12,9 +12,9 @@ export const QrModal = () => {
   const [activeTab, setActiveTab] = useState('code'); // 'code' | 'scanner' | 'manual'
   const [selectedTable, setSelectedTable] = useState(activeTable?.number || 12);
   const [selectedBranch, setSelectedBranch] = useState(activeTable?.branch || 'Chilonzor');
-  
+
   // URL & Network IP configuration for mobile scanning
-  const isLocalhost = typeof window !== 'undefined' && 
+  const isLocalhost = typeof window !== 'undefined' &&
     (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 
   const [networkMode, setNetworkMode] = useState(() => {
@@ -73,7 +73,7 @@ export const QrModal = () => {
   }
 
   const qrTargetUrl = `${baseUrl}${currentPath}?table=${selectedTable}&branch=${encodeURIComponent(selectedBranch)}`;
-  
+
   // High quality QR code with quiet margin
   const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=8&ecc=M&data=${encodeURIComponent(qrTargetUrl)}`;
 
@@ -81,7 +81,7 @@ export const QrModal = () => {
     activateTable(selectedTable, selectedBranch);
     setIsQrModalOpen(false);
     showToast(`🍽️ #${selectedTable}-stol faollashtirildi (${selectedBranch} filiali)`);
-    
+
     // Smooth scroll to menu
     const menuEl = document.getElementById('menu-section');
     if (menuEl) {
@@ -157,7 +157,7 @@ export const QrModal = () => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-md animate-fadeIn">
       <div className="bg-[#181B15] text-[#F4F5F2] rounded-3xl max-w-lg w-full p-5 sm:p-6 text-center shadow-2xl border border-[#2B3125] relative max-h-[94vh] overflow-y-auto">
-        
+
         {/* Close Button */}
         <button
           type="button"
@@ -172,7 +172,7 @@ export const QrModal = () => {
         </button>
 
         {/* Top Badge */}
-        <div className="w-12 h-12 rounded-2xl bg-[#00A859]/20 border border-[#00A859]/40 text-[#00A859] flex items-center justify-center mx-auto text-2xl font-black mb-2 shadow-[0_0_15px_rgba(0,168,89,0.25)]">
+        <div className="w-12 h-12 rounded-2xl bg-[#BA1D3D]/20 border border-[#BA1D3D]/40 text-[#FF2E5B] flex items-center justify-center mx-auto text-2xl font-black mb-2 shadow-[0_0_15px_rgba(186,29,61,0.3)]">
           📱
         </div>
 
@@ -191,11 +191,10 @@ export const QrModal = () => {
               stopCamera();
               setActiveTab('code');
             }}
-            className={`py-2 rounded-xl transition-all ${
-              activeTab === 'code'
-                ? 'bg-[#00A859] text-white shadow-md'
+            className={`py-2 rounded-xl transition-all ${activeTab === 'code'
+                ? 'bg-gradient-to-r from-[#9B1832] to-[#BA1D3D] text-white shadow-md'
                 : 'text-gray-400 hover:text-white'
-            }`}
+              }`}
           >
             📱 Stol QR-kodi
           </button>
@@ -205,11 +204,10 @@ export const QrModal = () => {
               setActiveTab('scanner');
               startCamera();
             }}
-            className={`py-2 rounded-xl transition-all ${
-              activeTab === 'scanner'
-                ? 'bg-[#00A859] text-white shadow-md'
+            className={`py-2 rounded-xl transition-all ${activeTab === 'scanner'
+                ? 'bg-gradient-to-r from-[#9B1832] to-[#BA1D3D] text-white shadow-md'
                 : 'text-gray-400 hover:text-white'
-            }`}
+              }`}
           >
             📷 Skaner
           </button>
@@ -219,11 +217,10 @@ export const QrModal = () => {
               stopCamera();
               setActiveTab('manual');
             }}
-            className={`py-2 rounded-xl transition-all ${
-              activeTab === 'manual'
-                ? 'bg-[#00A859] text-white shadow-md'
+            className={`py-2 rounded-xl transition-all ${activeTab === 'manual'
+                ? 'bg-gradient-to-r from-[#9B1832] to-[#BA1D3D] text-white shadow-md'
                 : 'text-gray-400 hover:text-white'
-            }`}
+              }`}
           >
             ⌨️ Qo'lda kiritish
           </button>
@@ -232,7 +229,7 @@ export const QrModal = () => {
         {/* TAB 1: QR CODE DISPLAY & NETWORK SETTINGS */}
         {activeTab === 'code' && (
           <div className="space-y-4">
-            
+
             {/* Branch and Table Selector */}
             <div className="grid grid-cols-2 gap-2.5 text-left">
               <div>
@@ -285,33 +282,30 @@ export const QrModal = () => {
                 <button
                   type="button"
                   onClick={() => setNetworkMode('wifi')}
-                  className={`py-1.5 px-2 rounded-lg border transition-all text-center ${
-                    networkMode === 'wifi'
+                  className={`py-1.5 px-2 rounded-lg border transition-all text-center ${networkMode === 'wifi'
                       ? 'bg-[#00A859]/20 border-[#00A859] text-[#00A859] font-black'
                       : 'border-[#2B3224] text-gray-400 hover:text-white'
-                  }`}
+                    }`}
                 >
                   📱 Wi-Fi (Telefon)
                 </button>
                 <button
                   type="button"
                   onClick={() => setNetworkMode('auto')}
-                  className={`py-1.5 px-2 rounded-lg border transition-all text-center ${
-                    networkMode === 'auto'
+                  className={`py-1.5 px-2 rounded-lg border transition-all text-center ${networkMode === 'auto'
                       ? 'bg-[#00A859]/20 border-[#00A859] text-[#00A859] font-black'
                       : 'border-[#2B3224] text-gray-400 hover:text-white'
-                  }`}
+                    }`}
                 >
                   💻 Localhost
                 </button>
                 <button
                   type="button"
                   onClick={() => setNetworkMode('custom')}
-                  className={`py-1.5 px-2 rounded-lg border transition-all text-center ${
-                    networkMode === 'custom'
+                  className={`py-1.5 px-2 rounded-lg border transition-all text-center ${networkMode === 'custom'
                       ? 'bg-[#00A859]/20 border-[#00A859] text-[#00A859] font-black'
                       : 'border-[#2B3224] text-gray-400 hover:text-white'
-                  }`}
+                    }`}
                 >
                   🌐 Maxsus havola
                 </button>
@@ -362,7 +356,7 @@ export const QrModal = () => {
             </div>
 
             {/* High-Contrast QR Code Card */}
-            <div className="p-4 bg-white rounded-3xl border-4 border-[#00A859]/30 shadow-[0_0_30px_rgba(0,168,89,0.2)] inline-block relative group">
+            <div className="p-4 bg-white rounded-3xl border-4 border-[#BA1D3D]/30 shadow-[0_0_30px_rgba(186,29,61,0.25)] inline-block relative group">
               <img
                 src={qrImageUrl}
                 alt={`ISTIQLOL #${selectedTable}-stol QR-kodi`}
@@ -373,7 +367,7 @@ export const QrModal = () => {
                 }}
               />
               <div className="mt-2.5 text-[11px] font-bold text-gray-800 flex items-center justify-center space-x-1.5">
-                <span className="text-emerald-700 font-extrabold">📸 Telefoningiz kamerasi bilan skanerlang</span>
+                <span className="text-[#9B1832] font-extrabold">📸 Telefoningiz kamerasi bilan skanerlang</span>
               </div>
             </div>
 
@@ -393,7 +387,7 @@ export const QrModal = () => {
               <button
                 type="button"
                 onClick={handleActivate}
-                className="w-full py-3.5 bg-gradient-to-r from-[#00A859] to-[#008f4c] hover:from-[#00b962] hover:to-[#009b53] text-white font-black text-sm rounded-2xl shadow-lg shadow-[#00A859]/30 active:scale-95 transition-all flex items-center justify-center space-x-2"
+                className="w-full py-3.5 bg-gradient-to-r from-[#9B1832] via-[#BA1D3D] to-[#800F26] hover:from-[#B01B3A] text-white font-black text-sm rounded-2xl shadow-lg shadow-[#9B1832]/35 active:scale-95 transition-all flex items-center justify-center space-x-2"
               >
                 <span>🍽️</span>
                 <span>Ushbu stoldan darhol buyurtma berish (#{selectedTable})</span>
@@ -441,10 +435,10 @@ export const QrModal = () => {
         {/* TAB 2: CAMERA SCANNER & SIMULATOR */}
         {activeTab === 'scanner' && (
           <div className="space-y-4">
-            
+
             {/* Viewfinder with Live Video or Animated Laser */}
-            <div className="relative w-64 h-64 mx-auto rounded-3xl bg-black overflow-hidden border-2 border-[#00A859] flex items-center justify-center shadow-xl">
-              
+            <div className="relative w-64 h-64 mx-auto rounded-3xl bg-black overflow-hidden border-2 border-[#BA1D3D] flex items-center justify-center shadow-xl">
+
               {cameraActive ? (
                 <video
                   ref={videoRef}
@@ -461,13 +455,13 @@ export const QrModal = () => {
               )}
 
               {/* Corner Target Markers */}
-              <div className="absolute top-3 left-3 w-7 h-7 border-t-4 border-l-4 border-[#00A859] rounded-tl-lg pointer-events-none"></div>
-              <div className="absolute top-3 right-3 w-7 h-7 border-t-4 border-r-4 border-[#00A859] rounded-tr-lg pointer-events-none"></div>
-              <div className="absolute bottom-3 left-3 w-7 h-7 border-b-4 border-l-4 border-[#00A859] rounded-bl-lg pointer-events-none"></div>
-              <div className="absolute bottom-3 right-3 w-7 h-7 border-b-4 border-r-4 border-[#00A859] rounded-br-lg pointer-events-none"></div>
+              <div className="absolute top-3 left-3 w-7 h-7 border-t-4 border-l-4 border-[#BA1D3D] rounded-tl-lg pointer-events-none"></div>
+              <div className="absolute top-3 right-3 w-7 h-7 border-t-4 border-r-4 border-[#BA1D3D] rounded-tr-lg pointer-events-none"></div>
+              <div className="absolute bottom-3 left-3 w-7 h-7 border-b-4 border-l-4 border-[#BA1D3D] rounded-bl-lg pointer-events-none"></div>
+              <div className="absolute bottom-3 right-3 w-7 h-7 border-b-4 border-r-4 border-[#BA1D3D] rounded-br-lg pointer-events-none"></div>
 
               {/* Laser Scanning Line */}
-              <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#00FF66] to-transparent absolute shadow-[0_0_15px_#00FF66] animate-bounce pointer-events-none"></div>
+              <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#FF1744] to-transparent absolute shadow-[0_0_15px_#FF1744] animate-bounce pointer-events-none"></div>
 
               {/* Scanning status overlay */}
               {!cameraActive && (
@@ -477,7 +471,7 @@ export const QrModal = () => {
                   <button
                     type="button"
                     onClick={startCamera}
-                    className="mt-2.5 px-3 py-1.5 bg-[#00A859] text-white text-[11px] font-black rounded-xl hover:bg-[#00924d] transition-all"
+                    className="mt-2.5 px-3 py-1.5 bg-[#BA1D3D] text-white text-[11px] font-black rounded-xl hover:bg-[#9B1832] transition-all"
                   >
                     Kamerani yoqish 📸
                   </button>
@@ -486,8 +480,8 @@ export const QrModal = () => {
 
               {isScanningSim && (
                 <div className="absolute inset-0 bg-black/85 flex flex-col items-center justify-center text-white z-20">
-                  <div className="w-9 h-9 border-4 border-[#00A859] border-t-transparent rounded-full animate-spin mb-2"></div>
-                  <p className="text-xs font-extrabold text-[#00FF66]">QR kod aniqlanmoqda...</p>
+                  <div className="w-9 h-9 border-4 border-[#BA1D3D] border-t-transparent rounded-full animate-spin mb-2"></div>
+                  <p className="text-xs font-extrabold text-[#FF2E5B]">QR kod aniqlanmoqda...</p>
                 </div>
               )}
             </div>
@@ -501,7 +495,7 @@ export const QrModal = () => {
             {/* Fast Demo Scan Triggers */}
             <div className="space-y-2 pt-1 text-left">
               <p className="text-xs font-bold text-gray-400">Tezkor stolni tanlash (Sinov uchun):</p>
-              
+
               <div className="grid grid-cols-2 gap-2">
                 <button
                   type="button"
@@ -587,7 +581,7 @@ export const QrModal = () => {
 
             <button
               type="submit"
-              className="w-full py-3.5 bg-gradient-to-r from-[#00A859] to-[#008f4c] hover:from-[#00b962] text-white font-black text-sm rounded-2xl shadow-lg shadow-[#00A859]/30 active:scale-95 transition-all"
+              className="w-full py-3.5 bg-gradient-to-r from-[#9B1832] via-[#BA1D3D] to-[#800F26] hover:from-[#B01B3A] text-white font-black text-sm rounded-2xl shadow-lg shadow-[#9B1832]/35 active:scale-95 transition-all"
             >
               🍽️ Menyuni ochish va stolni faollashtirish
             </button>

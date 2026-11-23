@@ -9,10 +9,10 @@ export const Footer = () => {
           
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center space-x-3">
-              <IstiqlolLogo className="w-14 h-14 drop-shadow-[0_0_16px_rgba(0,255,100,0.5)]" />
-              <div className="flex items-center gap-1.5">
-                <span className="text-2xl font-black tracking-tight text-white">ISTIQLOL</span>
+            <div className="flex items-center space-x-3 notranslate" translate="no">
+              <IstiqlolLogo className="w-14 h-14 drop-shadow-[0_0_18px_rgba(225,29,72,0.65)]" />
+              <div className="flex items-center gap-1.5 notranslate" translate="no">
+                <span className="text-2xl font-black tracking-tight text-white notranslate" translate="no">ISTIQLOL</span>
                 <span className="w-2 h-2 rounded-full bg-[#F3BE53]"></span>
               </div>
             </div>

@@ -10,7 +10,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
         className={className}
       >
         <defs>
-          {/* Intense Neon Green Glow */}
+          {/* Intense Royal Burgundy / Ruby Glow */}
           <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="10" result="blur1" />
             <feGaussianBlur stdDeviation="20" result="blur2" />
@@ -21,60 +21,60 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
             </feMerge>
           </filter>
 
-          {/* Deep Drop Shadow */}
+          {/* Deep Ruby Drop Shadow */}
           <filter id="shieldShadow" x="-15%" y="-15%" width="130%" height="130%">
-            <feDropShadow dx="0" dy="8" stdDeviation="12" floodColor="#00FF66" floodOpacity="0.45" />
+            <feDropShadow dx="0" dy="8" stdDeviation="12" floodColor="#E11D48" floodOpacity="0.55" />
           </filter>
 
           {/* Silver Chrome Gradient (Light) */}
           <linearGradient id="silverChrome" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="25%" stopColor="#DDE3EA" />
-            <stop offset="50%" stopColor="#9AA4AF" />
-            <stop offset="75%" stopColor="#E2E8F0" />
-            <stop offset="100%" stopColor="#64748B" />
+            <stop offset="25%" stopColor="#F5DDE3" />
+            <stop offset="50%" stopColor="#D4A7B3" />
+            <stop offset="75%" stopColor="#FCECEF" />
+            <stop offset="100%" stopColor="#8E5E6C" />
           </linearGradient>
 
           {/* Silver Bevel Vertical */}
           <linearGradient id="silverBevel" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="35%" stopColor="#CBD5E1" />
-            <stop offset="65%" stopColor="#64748B" />
-            <stop offset="100%" stopColor="#1E293B" />
+            <stop offset="35%" stopColor="#E2CCD3" />
+            <stop offset="65%" stopColor="#9C6473" />
+            <stop offset="100%" stopColor="#3B121E" />
           </linearGradient>
 
-          {/* Glowing Green Shield Background */}
-          <radialGradient id="greenCore" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#00E65B" />
-            <stop offset="45%" stopColor="#007A33" />
-            <stop offset="85%" stopColor="#023616" />
-            <stop offset="100%" stopColor="#011A0A" />
+          {/* Glowing Burgundy Core Shield Background */}
+          <radialGradient id="burgundyCore" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#FF1E56" />
+            <stop offset="35%" stopColor="#BA1D3D" />
+            <stop offset="70%" stopColor="#6E0E22" />
+            <stop offset="100%" stopColor="#2A050D" />
           </radialGradient>
 
-          {/* Green Flame Ambient */}
-          <linearGradient id="greenFlame" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#00FF66" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="#009933" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#00FF88" stopOpacity="0" />
+          {/* Burgundy Ruby Flame Ambient */}
+          <linearGradient id="burgundyFlame" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#FF1744" stopOpacity="0.85" />
+            <stop offset="50%" stopColor="#BE123C" stopOpacity="0.55" />
+            <stop offset="100%" stopColor="#E11D48" stopOpacity="0" />
           </linearGradient>
 
           {/* Star Chrome Facet Gradients */}
           <linearGradient id="starLight" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="100%" stopColor="#94A3B8" />
+            <stop offset="100%" stopColor="#FCE7EB" />
           </linearGradient>
           <linearGradient id="starDark" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#64748B" />
-            <stop offset="100%" stopColor="#1E293B" />
+            <stop offset="0%" stopColor="#A87382" />
+            <stop offset="100%" stopColor="#3B121E" />
           </linearGradient>
         </defs>
 
-        {/* Ambient Neon Flare Behind Shield */}
+        {/* Ambient Burgundy Flare Behind Shield */}
         <path
           d="M 60 120 L 440 120 L 420 350 L 250 515 L 80 350 Z"
-          fill="url(#greenFlame)"
+          fill="url(#burgundyFlame)"
           filter="url(#neonGlow)"
-          opacity="0.8"
+          opacity="0.9"
         />
 
         {/* =================================================== */}
@@ -88,12 +88,12 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
             stroke="#FFFFFF"
             strokeWidth="2"
           />
-          {/* Crown Jewels on Base Band */}
-          <circle cx="170" cy="115" r="4" fill="#00FF66" stroke="#FFFFFF" strokeWidth="1.5" />
-          <circle cx="210" cy="118" r="4.5" fill="#00FF66" stroke="#FFFFFF" strokeWidth="1.5" />
-          <circle cx="250" cy="119" r="5.5" fill="#FFFFFF" stroke="#00FF66" strokeWidth="2" />
-          <circle cx="290" cy="118" r="4.5" fill="#00FF66" stroke="#FFFFFF" strokeWidth="1.5" />
-          <circle cx="330" cy="115" r="4" fill="#00FF66" stroke="#FFFFFF" strokeWidth="1.5" />
+          {/* Crown Jewels on Base Band (Ruby/Burgundy Jewels) */}
+          <circle cx="170" cy="115" r="4" fill="#FF1744" stroke="#FFFFFF" strokeWidth="1.5" />
+          <circle cx="210" cy="118" r="4.5" fill="#FF1744" stroke="#FFFFFF" strokeWidth="1.5" />
+          <circle cx="250" cy="119" r="5.5" fill="#FFFFFF" stroke="#FF1744" strokeWidth="2" />
+          <circle cx="290" cy="118" r="4.5" fill="#FF1744" stroke="#FFFFFF" strokeWidth="1.5" />
+          <circle cx="330" cy="115" r="4" fill="#FF1744" stroke="#FFFFFF" strokeWidth="1.5" />
 
           {/* Crown Spikes Body */}
           <path
@@ -112,17 +112,17 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
           />
 
           {/* Crown Facet Highlights */}
-          <path d="M 250 15 L 250 119 L 210 70 Z" fill="#FFFFFF" opacity="0.4" />
-          <path d="M 250 15 L 250 119 L 290 70 Z" fill="#475569" opacity="0.3" />
+          <path d="M 250 15 L 250 119 L 210 70 Z" fill="#FFFFFF" opacity="0.45" />
+          <path d="M 250 15 L 250 119 L 290 70 Z" fill="#5E2030" opacity="0.3" />
           <path d="M 115 45 L 140 105 L 155 70 Z" fill="#FFFFFF" opacity="0.3" />
-          <path d="M 385 45 L 360 105 L 345 70 Z" fill="#475569" opacity="0.3" />
+          <path d="M 385 45 L 360 105 L 345 70 Z" fill="#5E2030" opacity="0.3" />
 
-          {/* Diamonds on Crown Peaks */}
-          <polygon points="250,5 258,15 250,25 242,15" fill="#00FF66" stroke="#FFFFFF" strokeWidth="2" />
-          <polygon points="115,35 122,43 115,51 108,43" fill="#00FF66" stroke="#FFFFFF" strokeWidth="1.5" />
-          <polygon points="385,35 392,43 385,51 378,43" fill="#00FF66" stroke="#FFFFFF" strokeWidth="1.5" />
-          <circle cx="180" cy="73" r="5" fill="#00FF66" stroke="#FFFFFF" strokeWidth="1.5" />
-          <circle cx="320" cy="73" r="5" fill="#00FF66" stroke="#FFFFFF" strokeWidth="1.5" />
+          {/* Ruby Diamonds on Crown Peaks */}
+          <polygon points="250,5 258,15 250,25 242,15" fill="#FF1744" stroke="#FFFFFF" strokeWidth="2" />
+          <polygon points="115,35 122,43 115,51 108,43" fill="#FF1744" stroke="#FFFFFF" strokeWidth="1.5" />
+          <polygon points="385,35 392,43 385,51 378,43" fill="#FF1744" stroke="#FFFFFF" strokeWidth="1.5" />
+          <circle cx="180" cy="73" r="5" fill="#FF1744" stroke="#FFFFFF" strokeWidth="1.5" />
+          <circle cx="320" cy="73" r="5" fill="#FF1744" stroke="#FFFFFF" strokeWidth="1.5" />
         </g>
 
         {/* =================================================== */}
@@ -139,11 +139,11 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
             filter="url(#shieldShadow)"
           />
 
-          {/* Inner Glowing Green Neon Trench */}
+          {/* Inner Glowing Burgundy Neon Trench */}
           <path
             d="M 85 133 L 415 133 L 398 338 L 250 493 L 102 338 Z"
-            fill="#011A0A"
-            stroke="#00FF66"
+            fill="#2A050D"
+            stroke="#FF1744"
             strokeWidth="6"
             filter="url(#neonGlow)"
           />
@@ -154,20 +154,20 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
             fill="url(#silverChrome)"
           />
 
-          {/* Shield Core Body (Emerald Sunburst Gradient) */}
+          {/* Shield Core Body (Burgundy Sunburst Gradient) */}
           <path
             d="M 104 150 L 396 150 L 381 326 L 250 466 L 119 326 Z"
-            fill="url(#greenCore)"
+            fill="url(#burgundyCore)"
           />
 
           {/* Shield Texture / Carbon Fiber Grid overlay */}
           <path
             d="M 104 150 L 396 150 L 381 326 L 250 466 L 119 326 Z"
             fill="none"
-            stroke="#00FF66"
+            stroke="#FF1744"
             strokeWidth="1"
             strokeDasharray="4 8"
-            opacity="0.25"
+            opacity="0.3"
           />
         </g>
 
@@ -178,8 +178,8 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
           {/* Header Banner Arc Background */}
           <path
             d="M 112 158 L 388 158 L 380 230 C 300 242 200 242 120 230 Z"
-            fill="#032511"
-            stroke="#00FF66"
+            fill="#380914"
+            stroke="#FF1744"
             strokeWidth="2"
           />
 
@@ -192,7 +192,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
             fontSize="54"
             fontWeight="900"
             letterSpacing="5"
-            fill="#011608"
+            fill="#140207"
           >
             ISTIQLOL
           </text>
@@ -204,7 +204,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
             fontSize="54"
             fontWeight="900"
             letterSpacing="5"
-            fill="#1E293B"
+            fill="#3B121E"
           >
             ISTIQLOL
           </text>
@@ -237,7 +237,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
             fill="none"
             stroke="#FFFFFF"
             strokeWidth="1"
-            opacity="0.8"
+            opacity="0.85"
           >
             ISTIQLOL
           </text>
@@ -260,7 +260,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
             cx="250"
             cy="345"
             r="64"
-            fill="#011F0D"
+            fill="#2E0711"
             stroke="url(#silverBevel)"
             strokeWidth="9"
           />
@@ -270,9 +270,9 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
             cy="345"
             r="56"
             fill="none"
-            stroke="#00FF66"
+            stroke="#FF1744"
             strokeWidth="2.5"
-            opacity="0.9"
+            opacity="0.95"
           />
 
           {/* Compass Pointer Points (Top, Bottom, Left, Right) */}
@@ -315,7 +315,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
           <polygon
             points="250,288 266,328 304,328 273,356 284,390 250,363 216,390 227,356 196,328 234,328"
             fill="url(#silverChrome)"
-            stroke="#00FF66"
+            stroke="#FF1744"
             strokeWidth="3"
             filter="url(#neonGlow)"
           />
@@ -326,7 +326,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
           <polygon
             points="250,288 266,328 304,328 273,356 284,390 250,363 216,390 227,356 196,328 234,328"
             fill="url(#silverChrome)"
-            stroke="#00FF66"
+            stroke="#FF1744"
             strokeWidth="3"
           />
         </g>
@@ -336,7 +336,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
           <polygon
             points="250,288 266,328 304,328 273,356 284,390 250,363 216,390 227,356 196,328 234,328"
             fill="url(#silverChrome)"
-            stroke="#00FF66"
+            stroke="#FF1744"
             strokeWidth="3"
           />
         </g>
@@ -345,7 +345,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
         <g transform="translate(150, 368) scale(0.42) translate(-250, -345)">
           <polygon
             points="250,288 266,328 304,328 273,356 284,390 250,363 216,390 227,356 196,328 234,328"
-            fill="#00FF66"
+            fill="#FF1744"
             stroke="#FFFFFF"
             strokeWidth="2"
           />
@@ -355,7 +355,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
         <g transform="translate(350, 368) scale(0.42) translate(-250, -345)">
           <polygon
             points="250,288 266,328 304,328 273,356 284,390 250,363 216,390 227,356 196,328 234,328"
-            fill="#00FF66"
+            fill="#FF1744"
             stroke="#FFFFFF"
             strokeWidth="2"
           />
@@ -365,7 +365,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
         <g transform="translate(168, 430) scale(0.48) translate(-250, -345)">
           <polygon
             points="250,288 266,328 304,328 273,356 284,390 250,363 216,390 227,356 196,328 234,328"
-            fill="#00FF66"
+            fill="#FF1744"
             stroke="#FFFFFF"
             strokeWidth="2"
           />
@@ -375,7 +375,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
         <g transform="translate(332, 430) scale(0.48) translate(-250, -345)">
           <polygon
             points="250,288 266,328 304,328 273,356 284,390 250,363 216,390 227,356 196,328 234,328"
-            fill="#00FF66"
+            fill="#FF1744"
             stroke="#FFFFFF"
             strokeWidth="2"
           />
@@ -394,7 +394,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
             fontSize="46"
             fontWeight="900"
             letterSpacing="3"
-            fill="#011608"
+            fill="#120206"
           >
             2012
           </text>
@@ -406,7 +406,7 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
             fontSize="46"
             fontWeight="900"
             letterSpacing="3"
-            fill="#1E293B"
+            fill="#3B121E"
           >
             2012
           </text>
@@ -450,10 +450,10 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
             <span className="text-2xl sm:text-3xl font-black tracking-tight text-white group-hover:text-[#F3BE53] transition-colors">
               ISTIQLOL
             </span>
-            <span className="w-2.5 h-2.5 rounded-full bg-[#F3BE53] animate-pulse"></span>
+            <span className="w-2.5 h-2.5 rounded-full bg-[#E11D48] animate-pulse"></span>
           </div>
-          <p className="text-[10px] font-bold text-gray-400 tracking-wider uppercase -mt-1 hidden sm:block">
-            Mazzali va tezkor!
+          <p className="text-[10px] font-bold text-[#D8B4BE] tracking-wider uppercase -mt-1 hidden sm:block">
+            Fast Food & Mazali Taomlar
           </p>
         </div>
       )}
@@ -462,4 +462,3 @@ export const IstiqlolLogo = ({ className = "w-11 h-11", showText = false }) => {
 };
 
 export default IstiqlolLogo;
-

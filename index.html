@@ -13,7 +13,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#131512] text-[#F4F5F2] antialiased font-sans selection:bg-[#F3BE53] selection:text-[#131512]">
+<body class="bg-[#18090E] text-[#FFF0F3] antialiased font-sans selection:bg-[#BA1D3D] selection:text-white">
+  <div id="google_translate_element" style="display:none"></div>
+  <script type="text/javascript">
+    window.googleTranslateElementInit = function() {
+      try {
+        new window.google.translate.TranslateElement({
+          pageLanguage: 'uz',
+          includedLanguages: 'uz,ru,en,kk,tg,tr,ar,zh-CN,ko,de,fr,ja,hi',
+          autoDisplay: false
+        }, 'google_translate_element');
+      } catch (e) { }
+    };
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   <div id="root"></div>
   <!-- Vite React Module Entry -->
   <script type="module" src="/src/main.jsx"></script>

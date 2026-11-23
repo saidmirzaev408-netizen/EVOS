@@ -67,7 +67,7 @@ export const LoyaltyProfileModal = () => {
                 </span>
                 <h3 className="text-2xl font-black mt-1">GOLD VIP TIER</h3>
               </div>
-              <IstiqlolLogo className="w-12 h-12 drop-shadow-[0_0_12px_rgba(0,255,100,0.6)]" />
+              <IstiqlolLogo className="w-12 h-12 drop-shadow-[0_0_12px_rgba(243,190,83,0.6)]" />
             </div>
 
             <div className="mt-6 flex justify-between items-end">
@@ -97,7 +97,7 @@ export const LoyaltyProfileModal = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-4 py-2 rounded-xl text-xs font-black transition-all ${
                   activeTab === tab.id
-                    ? 'bg-evos-600 text-white'
+                    ? 'bg-[#9B1832] text-white shadow-md shadow-[#9B1832]/30'
                     : 'text-gray-500 hover:text-gray-900 dark:hover:text-white'
                 }`}
               >

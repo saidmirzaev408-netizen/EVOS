@@ -13,8 +13,8 @@ export const Hero = () => {
 
   return (
     <section className="relative overflow-hidden bg-[#131512] text-[#F4F5F2] pt-6 pb-12 sm:pt-10 sm:pb-20 border-b border-[#2B3026]">
-      {/* Subtle Ambient Gold / Olive Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#F3BE53]/10 rounded-full blur-3xl pointer-events-none"></div>
+      {/* Subtle Ambient Burgundy & Gold Glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[320px] bg-gradient-to-r from-[#BA1D3D]/20 via-[#800F26]/15 to-[#F3BE53]/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -24,19 +24,19 @@ export const Hero = () => {
             
             {/* Official Brand Badge */}
             <div className="inline-flex items-center space-x-2.5 bg-[#23271E] border border-[#353B2F] px-4 py-1.5 rounded-full text-[#F3BE53] font-black text-xs sm:text-sm shadow-md">
-              <IstiqlolLogo className="w-5 h-5 drop-shadow-[0_0_8px_rgba(0,255,100,0.6)]" />
-              <span>ISTIQLOL — Premium Fast Food & Mazali Taomlar</span>
+              <IstiqlolLogo className="w-5 h-5 drop-shadow-[0_0_10px_rgba(225,29,72,0.7)]" />
+              <span>{t('heroBadge')}</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
-              Haqiqiy Mazza va{' '}
+              {t('heroTitlePart1')}{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F3BE53] via-[#F8D278] to-[#E5A934]">
-                Tezkor Yetkazish
+                {t('heroTitlePart2')}
               </span>
             </h1>
 
             <p className="text-base sm:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 font-medium">
-              Tandirda pishgan go'shtli somsa, nozik qatlamli medovik va napoleon, qarsildoq hot-doglar hamda muzdek yalpizli moxitolar 30 daqiqada eshigingizda!
+              {t('heroSubtitle')}
             </p>
 
             {/* Hero CTAs matching luxury gold buttons */}
@@ -45,7 +45,7 @@ export const Hero = () => {
                 onClick={scrollToMenu}
                 className="flex items-center space-x-2 bg-[#F3BE53] hover:bg-[#E5A934] text-[#131512] font-black text-sm sm:text-base px-8 py-3.5 rounded-full shadow-xl shadow-[#F3BE53]/25 transition-transform active:scale-95"
               >
-                <span>Hozir buyurtma berish</span>
+                <span>{t('orderNow')}</span>
                 <span>→</span>
               </button>
 
@@ -54,7 +54,7 @@ export const Hero = () => {
                 className="flex items-center space-x-2 bg-[#23271E] hover:bg-[#2C3227] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-full border border-[#353B2F] transition-colors shadow-sm"
               >
                 <Icon name="flame" className="w-5 h-5 text-[#F3BE53]" />
-                <span>Menyuni ko'rish</span>
+                <span>{t('viewMenu')}</span>
               </button>
             </div>
 
@@ -71,13 +71,13 @@ export const Hero = () => {
                     {"★".repeat(5)}
                     <span className="ml-1 text-white font-extrabold">4.95</span>
                   </div>
-                  <p className="text-[11px] text-gray-400 font-medium">500,000+ mamnun mijozlar bahosi</p>
+                  <p className="text-[11px] text-gray-400 font-medium">{t('ratingText')}</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-2 text-xs font-semibold text-gray-300">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#00A859]"></span>
-                <span>🛵 25-35 daqiqa ichida yetkazamiz</span>
+                <span>🛵 {t('estimatedTime')}</span>
               </div>
             </div>
 

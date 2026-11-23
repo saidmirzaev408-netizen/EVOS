@@ -2,13 +2,28 @@ import React, { createContext, useContext, useState, useEffect, useMemo } from '
 import { initialProducts, initialCategories, samplePromoCodes, loyaltyRewards, categoryFallbacks } from '../data/products';
 import { branchesData } from '../data/branches';
 import { translations } from '../data/i18n';
+import { foodNameTranslations } from '../data/foodTranslations';
 import confetti from 'canvas-confetti';
+
+const enrichProducts = (items) => {
+  return (items || []).map(p => ({
+    ...p,
+    name: {
+      ...p.name,
+      ...(foodNameTranslations[p.id] || {})
+    }
+  }));
+};
 
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  // Language: 'uz', 'ru', 'en'
-  const [lang, setLang] = useState(() => localStorage.getItem('evos_lang') || 'uz');
+  // Language: 'uz', 'ru', 'en', 'kk', 'tg', 'tr', 'ar', 'zh', 'ko', 'de', 'fr', 'ja', 'hi'
+  const [lang, setLangState] = useState(() => localStorage.getItem('evos_lang') || 'uz');
+  const setLang = (newLang) => {
+    setLangState(newLang);
+    localStorage.setItem('evos_lang', newLang);
+  };
   // Theme: 'light', 'dark'
   const [theme, setTheme] = useState(() => localStorage.getItem('evos_theme') || 'dark');
   // App Mode: 'client' or 'admin'
@@ -32,16 +47,16 @@ export const AppProvider = ({ children }) => {
 
   // Products list with fresh catalog priority
   const [products, setProducts] = useState(() => {
-    const saved = localStorage.getItem('evos_products_v3');
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed;
-        }
-      } catch (e) { }
-    }
-    return initialProducts;
+    // Clear legacy corrupted image caches
+    try {
+      localStorage.removeItem('evos_products_v5');
+      localStorage.removeItem('evos_products_v4');
+      localStorage.removeItem('evos_products_v3');
+      localStorage.removeItem('evos_products_v2');
+      localStorage.removeItem('evos_products');
+    } catch (e) { }
+
+    return enrichProducts(initialProducts);
   });
   // Cart items
   const [cart, setCart] = useState(() => {
@@ -187,7 +202,7 @@ export const AppProvider = ({ children }) => {
   }, [favorites]);
 
   useEffect(() => {
-    localStorage.setItem('evos_products_v3', JSON.stringify(products));
+    localStorage.setItem('evos_products_v6', JSON.stringify(products));
   }, [products]);
 
   useEffect(() => {

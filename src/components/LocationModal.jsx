@@ -15,12 +15,19 @@ export const LocationModal = () => {
   if (!isLocationModalOpen) return null;
 
   const cities = [
-    { id: 'Toshkent', name: 'Toshkent shahri' },
-    { id: 'Samarqand', name: 'Samarqand' },
-    { id: 'Buxoro', name: 'Buxoro' },
-    { id: 'Namangan', name: 'Namangan' },
-    { id: 'Andijon', name: 'Andijon' },
-    { id: 'Farg\'ona', name: 'Farg\'ona' }
+    { id: 'Toshkent', name: '🏙️ Toshkent shahri & viloyati' },
+    { id: 'Samarqand', name: '🏛️ Samarqand viloyati' },
+    { id: 'Buxoro', name: '🕌 Buxoro viloyati' },
+    { id: 'Andijon', name: '🌸 Andijon viloyati' },
+    { id: 'Farg\'ona', name: '🍇 Farg\'ona viloyati' },
+    { id: 'Namangan', name: '🌺 Namangan viloyati' },
+    { id: 'Xorazm', name: '🏺 Xorazm viloyati (Urganch)' },
+    { id: 'Qashqadaryo', name: '🐎 Qashqadaryo viloyati (Qarshi)' },
+    { id: 'Surxondaryo', name: '☀️ Surxondaryo viloyati (Termiz)' },
+    { id: 'Jizzax', name: '⛰️ Jizzax viloyati' },
+    { id: 'Navoiy', name: '🏭 Navoiy viloyati' },
+    { id: 'Sirdaryo', name: '🌊 Sirdaryo viloyati (Guliston)' },
+    { id: 'Qoraqalpog\'iston', name: '🌾 Qoraqalpog\'iston Respublikasi (Nukus)' }
   ];
 
   const districtsTashkent = [

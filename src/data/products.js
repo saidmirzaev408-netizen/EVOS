@@ -1,16 +1,93 @@
 // ISTIQLOL Products Data with Multi-language support and realistic pricing in Uzbek Soums (UZS)
 export const initialCategories = [
-  { id: 'all', name: { uz: 'Barchasi', ru: 'Все', en: 'All' }, icon: '✨' },
-  { id: 'somsa', name: { uz: 'Somsa', ru: 'Самса', en: 'Samsa' }, icon: '🥟' },
-  { id: 'pirojniy', name: { uz: 'Pirojniy', ru: 'Пирожные', en: 'Pastries' }, icon: '🍰' },
-  { id: 'hotdogs', name: { uz: 'Hot-doglar', ru: 'Хот-доги', en: 'Hot Dogs' }, icon: '🌭' },
-  { id: 'coffee', name: { uz: 'Qofe', ru: 'Кофе', en: 'Coffee' }, icon: '☕' },
-  { id: 'tea', name: { uz: 'Choy', ru: 'Чай', en: 'Tea' }, icon: '🍵' },
-  { id: 'mojito', name: { uz: 'Moxito', ru: 'Мохито', en: 'Mojito' }, icon: '🍹' },
-  { id: 'napitkalar', name: { uz: 'Napitkalar', ru: 'Напитки', en: 'Cold Drinks' }, icon: '🥤' },
-  { id: 'lavash', name: { uz: 'Lavash', ru: 'Лаваш', en: 'Lavash' }, icon: '🌯' },
-  { id: 'burgers', name: { uz: 'Burgerlar', ru: 'Бургеры', en: 'Burgers' }, icon: '🍔' },
-  { id: 'combos', name: { uz: 'Kombolar', ru: 'Комбо', en: 'Combos' }, icon: '🍱' }
+  {
+    id: 'all',
+    name: {
+      uz: 'Barchasi', ru: 'Все', en: 'All', kk: 'Барлығы', tg: 'Ҳама',
+      tr: 'Tümü', ar: 'الكل', zh: '全部', ko: '전체', de: 'Alle', fr: 'Tout', ja: 'すべて', hi: 'सभी'
+    },
+    icon: '✨'
+  },
+  {
+    id: 'somsa',
+    name: {
+      uz: 'Somsa', ru: 'Самса', en: 'Samsa', kk: 'Самса', tg: 'Самбӯса',
+      tr: 'Samsa', ar: 'سمبوسة', zh: '烤包子', ko: '사모사', de: 'Samsa', fr: 'Samoussa', ja: 'サモサ', hi: 'समोसा'
+    },
+    icon: '🥟'
+  },
+  {
+    id: 'pirojniy',
+    name: {
+      uz: 'Pirojniy', ru: 'Пирожные', en: 'Pastries', kk: 'Пирожныйлар', tg: 'Тортҳо',
+      tr: 'Tatlılar', ar: 'حلويات', zh: '甜点', ko: '디저트', de: 'Gebäck', fr: 'Pâtisseries', ja: 'ケーキ', hi: 'पेस्ट्री'
+    },
+    icon: '🍰'
+  },
+  {
+    id: 'hotdogs',
+    name: {
+      uz: 'Hot-doglar', ru: 'Хот-доги', en: 'Hot Dogs', kk: 'Хот-догтар', tg: 'Ҳот-догҳо',
+      tr: 'Sosisli', ar: 'هوت دوغ', zh: '热狗', ko: '핫도그', de: 'Hotdogs', fr: 'Hot-dogs', ja: 'ホットドッグ', hi: 'हॉट डॉग'
+    },
+    icon: '🌭'
+  },
+  {
+    id: 'coffee',
+    name: {
+      uz: 'Qofe', ru: 'Кофе', en: 'Coffee', kk: 'Кофе', tg: 'Қаҳва',
+      tr: 'Kahve', ar: 'قهوة', zh: '咖啡', ko: '커피', de: 'Kaffee', fr: 'Café', ja: 'コーヒー', hi: 'कॉफ़ी'
+    },
+    icon: '☕'
+  },
+  {
+    id: 'tea',
+    name: {
+      uz: 'Choy', ru: 'Чай', en: 'Tea', kk: 'Шай', tg: 'Чой',
+      tr: 'Çay', ar: 'شاي', zh: '茶', ko: '차', de: 'Tee', fr: 'Thé', ja: 'お茶', hi: 'चाय'
+    },
+    icon: '🍵'
+  },
+  {
+    id: 'mojito',
+    name: {
+      uz: 'Moxito', ru: 'Мохито', en: 'Mojito', kk: 'Мохито', tg: 'Мохито',
+      tr: 'Mojito', ar: 'موهيتو', zh: '莫吉托', ko: '모히또', de: 'Mojito', fr: 'Mojito', ja: 'モヒート', hi: 'मोहीतो'
+    },
+    icon: '🍹'
+  },
+  {
+    id: 'napitkalar',
+    name: {
+      uz: 'Napitkalar', ru: 'Напитки', en: 'Cold Drinks', kk: 'Сусындар', tg: 'Нӯшокиҳо',
+      tr: 'İçecekler', ar: 'مشروبات', zh: '饮料', ko: '음료', de: 'Getränke', fr: 'Boissons', ja: '飲み物', hi: 'शीतल पेय'
+    },
+    icon: '🥤'
+  },
+  {
+    id: 'lavash',
+    name: {
+      uz: 'Lavash', ru: 'Лаваш', en: 'Lavash', kk: 'Лаваш', tg: 'Лаваш',
+      tr: 'Lavaş', ar: 'لافاش', zh: '卷饼', ko: '라바쉬', de: 'Lavash', fr: 'Lavash', ja: 'ラバシュ', hi: 'लावाश'
+    },
+    icon: '🌯'
+  },
+  {
+    id: 'burgers',
+    name: {
+      uz: 'Burgerlar', ru: 'Бургеры', en: 'Burgers', kk: 'Бургерлер', tg: 'Бургерҳо',
+      tr: 'Burgerler', ar: 'برغر', zh: '汉堡', ko: '버거', de: 'Burger', fr: 'Burgers', ja: 'バーガー', hi: 'बर्गर'
+    },
+    icon: '🍔'
+  },
+  {
+    id: 'combos',
+    name: {
+      uz: 'Kombolar', ru: 'Комбо', en: 'Combos', kk: 'Комболар', tg: 'Комбоҳо',
+      tr: 'Kombolar', ar: 'وجبات كومبو', zh: '套餐', ko: '콤보', de: 'Kombos', fr: 'Combos', ja: 'コンボ', hi: 'कॉम्बो'
+    },
+    icon: '🍱'
+  }
 ];
 
 export const initialProducts = [
@@ -55,7 +132,7 @@ export const initialProducts = [
       en: 'Multi-layered flaky buttery pastry stuffed with tender beef and crushed cumin'
     },
     price: 15000,
-    image: 'https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80',
     calories: '330 kcal',
     weight: '170g',
     rating: 4.88,
@@ -78,7 +155,7 @@ export const initialProducts = [
       en: 'Melted stretchy mozzarella cheese infused with aromatic fresh garden herbs'
     },
     price: 13000,
-    image: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80',
     calories: '280 kcal',
     weight: '150g',
     rating: 4.8,
@@ -101,7 +178,7 @@ export const initialProducts = [
       en: 'Lean chicken breast strips with sweet onions and gentle oriental spices'
     },
     price: 12000,
-    image: 'https://images.unsplash.com/photo-1606471191009-63994c53433b?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80',
     calories: '260 kcal',
     weight: '155g',
     rating: 4.75,
@@ -124,7 +201,7 @@ export const initialProducts = [
       en: 'Autumn sweet pumpkin roasted with butter and a dash of black pepper'
     },
     price: 9000,
-    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=800&q=80',
     calories: '210 kcal',
     weight: '150g',
     rating: 4.7,
@@ -226,9 +303,9 @@ export const initialProducts = [
     weight: '120g',
     rating: 4.84,
     reviewsCount: 175,
-    badge: '',
+    badge: 'Shokoladli',
     spicy: false,
-    isPopular: false
+    isPopular: true
   },
   {
     id: 'prj-5',
@@ -244,7 +321,7 @@ export const initialProducts = [
       en: 'Famous Basque burnt cheesecake with caramel notes and silky melting heart'
     },
     price: 32000,
-    image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1524351199678-941a58a3df50?auto=format&fit=crop&w=800&q=80',
     calories: '420 kcal',
     weight: '180g',
     rating: 4.94,
@@ -272,7 +349,7 @@ export const initialProducts = [
     },
     price: 22000,
     oldPrice: 25000,
-    image: 'https://images.unsplash.com/photo-1627059173264-b5a81e3cf5ea?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=800&q=80',
     calories: '390 kcal',
     weight: '200g',
     rating: 4.88,
@@ -295,7 +372,7 @@ export const initialProducts = [
       en: 'Toasted sesame bun, jumbo grilled sausage, cheddar cheese and crispy fried onion flakes'
     },
     price: 26000,
-    image: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1627059173264-b5a81e3cf5ea?auto=format&fit=crop&w=800&q=80',
     calories: '450 kcal',
     weight: '250g',
     rating: 4.82,

@@ -96,7 +96,7 @@ export const ProductCard = ({ product }) => {
 
       {/* Pricing & Add to cart bar */}
       <div className="p-4 pt-1">
-        <div className="flex items-center justify-between border-t border-[#2F3528] pt-3">
+        <div className="flex items-center justify-between border-t border-[#4A1A27] pt-3">
           <div>
             <p className="text-base font-black text-white">
               {formatUZS(product.price)}

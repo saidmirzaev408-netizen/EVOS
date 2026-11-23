@@ -16,11 +16,11 @@ export const OrderTrackingModal = () => {
   const tableNum = activeTrackingOrder.tableNumber || 12;
 
   const stages = isTable ? [
-    { id: 1, title: `Buyurtma qabul qilindi (#${tableNum}-stol)`, desc: 'EVOS oshxonasi stoldan berilgan buyurtmani tasdiqladi', icon: '📝', time: '14:05' },
+    { id: 1, title: `Buyurtma qabul qilindi (#${tableNum}-stol)`, desc: 'ISTIQLOL oshxonasi stoldan berilgan buyurtmani tasdiqladi', icon: '📝', time: '14:05' },
     { id: 2, title: 'Oshpazlar tayyorlamoqda', desc: 'Somsa va issiq taomlar pechda pishirilmoqda', icon: '👨‍🍳', time: '14:08' },
     { id: 3, title: 'Podnosga terildi', desc: 'Issiq taomlar va yaxna moxito tayyorlandi', icon: '🍱', time: '14:14' },
     { id: 4, title: 'Ofitsiant olib kelmoqda', desc: `Ofitsiant taomni #${tableNum}-stol tomon keltirmoqda`, icon: '🤵', time: '14:17' },
-    { id: 5, title: 'Stolga yetkazildi — Yoqimli ishtaha!', desc: 'Taomlaringiz stolingizda. EVOS bilan rohatlaning!', icon: '🎉', time: '14:20' }
+    { id: 5, title: 'Stolga yetkazildi — Yoqimli ishtaha!', desc: 'Taomlaringiz stolingizda. ISTIQLOL bilan rohatlaning!', icon: '🎉', time: '14:20' }
   ] : [
     { id: 1, title: t('orderStatus1'), desc: t('orderStatus1Desc'), icon: '📝', time: '19:46' },
     { id: 2, title: t('orderStatus2'), desc: t('orderStatus2Desc'), icon: '👨‍🍳', time: '19:49' },

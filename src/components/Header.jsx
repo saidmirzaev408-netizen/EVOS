@@ -2,6 +2,7 @@ import React from 'react';
 import { useApp } from '../context/AppContext';
 import { Icon } from './Icons';
 import { IstiqlolLogo } from './IstiqlolLogo';
+import { languageOptions, allLanguageList } from '../data/i18n';
 
 export const Header = () => {
   const {
@@ -11,10 +12,47 @@ export const Header = () => {
     cart, loyaltyPoints,
     setIsCartOpen, setIsProfileOpen, setIsQrModalOpen,
     searchQuery, setSearchQuery, t, activeTable,
-    deliveryLocation, setIsLocationModalOpen, showToast
+    deliveryLocation, setDeliveryLocation, setIsLocationModalOpen, showToast
   } = useApp();
 
   const totalCartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  const handleLangChange = (newLang) => {
+    setLang(newLang);
+    const selectedItem = allLanguageList.find(i => i.code === newLang);
+    if (selectedItem) {
+      showToast(`${selectedItem.icon} ${selectedItem.label} tanlandi! 🎉`);
+    }
+
+    // Synchronize with Google Website Translator for dynamic deep translation
+    const gMap = {
+      uz: 'uz',
+      ru: 'ru',
+      en: 'en',
+      kk: 'kk',
+      tg: 'tg',
+      tr: 'tr',
+      ar: 'ar',
+      zh: 'zh-CN',
+      ko: 'ko',
+      de: 'de',
+      fr: 'fr',
+      ja: 'ja',
+      hi: 'hi'
+    };
+    const target = gMap[newLang] || newLang;
+    try {
+      document.cookie = `googtrans=/uz/${target}; path=/;`;
+      if (window.location.hostname) {
+        document.cookie = `googtrans=/uz/${target}; path=/; domain=${window.location.hostname};`;
+      }
+      const combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        combo.value = target;
+        combo.dispatchEvent(new Event('change'));
+      }
+    } catch (e) { }
+  };
 
   return (
     <header className="sticky top-0 z-40 bg-[#161814]/95 backdrop-blur-md border-b border-[#2B3026] text-white transition-colors shadow-md">
@@ -46,18 +84,19 @@ export const Header = () => {
           <div className="flex items-center space-x-3 sm:space-x-4">
             <button
               onClick={() => setAppMode('client')}
-              className="flex items-center space-x-2.5 text-left group"
+              className="flex items-center space-x-2.5 text-left group notranslate"
+              translate="no"
             >
-              <IstiqlolLogo className="w-11 h-11 sm:w-12 sm:h-12 drop-shadow-[0_0_12px_rgba(0,255,100,0.55)] group-hover:scale-110 transition-transform" />
-              <div>
+              <IstiqlolLogo className="w-11 h-11 sm:w-12 sm:h-12 drop-shadow-[0_0_15px_rgba(225,29,72,0.65)] group-hover:scale-110 transition-transform" />
+              <div className="notranslate" translate="no">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-2xl sm:text-3xl font-black tracking-tight text-white group-hover:text-[#F3BE53] transition-colors">
+                  <span className="text-2xl sm:text-3xl font-black tracking-tight text-white group-hover:text-[#F3BE53] transition-colors notranslate" translate="no">
                     ISTIQLOL
                   </span>
                   <span className="w-2.5 h-2.5 rounded-full bg-[#F3BE53] animate-pulse"></span>
                 </div>
-                <p className="text-[10px] font-bold text-gray-400 tracking-wider uppercase -mt-1 hidden sm:block">
-                  {t('brandSlogan')}
+                <p className="text-[10px] font-bold text-gray-400 tracking-wider uppercase -mt-1 hidden sm:block notranslate" translate="no">
+                  MAZZALI VA TEZKOR!
                 </p>
               </div>
             </button>
@@ -123,7 +162,7 @@ export const Header = () => {
               onClick={() => setIsQrModalOpen(true)}
               className={`p-2 sm:px-3 sm:py-1.5 rounded-full text-xs font-semibold flex items-center space-x-1 transition-all ${
                 activeTable?.active
-                  ? 'bg-[#00A859] text-white font-extrabold shadow-sm ring-2 ring-[#00A859]/50'
+                  ? 'bg-[#9B1832] text-white font-extrabold shadow-sm ring-2 ring-[#9B1832]/50'
                   : 'bg-[#23271E] hover:bg-[#2C3227] text-gray-300 border border-[#353B2F]'
               }`}
               title="QR Stol Menyusi"
@@ -134,17 +173,28 @@ export const Header = () => {
               </span>
             </button>
 
-            {/* Language Switcher */}
-            <div className="relative">
+            {/* Language Switcher — Country Languages */}
+            <div className="relative flex items-center">
               <select
                 value={lang}
-                onChange={(e) => setLang(e.target.value)}
-                className="appearance-none bg-[#23271E] text-gray-200 text-xs font-bold px-2.5 py-1.5 rounded-full border border-[#353B2F] cursor-pointer focus:outline-none focus:border-[#F3BE53]"
+                onChange={(e) => handleLangChange(e.target.value)}
+                className="bg-[#240C16] hover:bg-[#34111F] text-[#F3BE53] text-xs font-black pl-3 pr-6 py-1.5 rounded-full border border-[#521727] hover:border-[#F3BE53]/60 cursor-pointer focus:outline-none focus:border-[#F3BE53] shadow-md transition-all appearance-none max-w-[110px]"
+                title="Tilni tanlang"
+                aria-label="Til tanlash"
               >
-                <option value="uz">🇺🇿 UZ</option>
-                <option value="ru">🇷🇺 RU</option>
-                <option value="en">🇬🇧 EN</option>
+                {languageOptions.map((group, gIdx) => (
+                  <optgroup key={gIdx} label={group.group} className="bg-[#1C0810] text-[#F3BE53] font-black">
+                    {group.items.map(opt => (
+                      <option key={opt.code} value={opt.code} className="bg-[#1C0810] text-white py-1">
+                        {opt.icon} {opt.label}
+                      </option>
+                    ))}
+                  </optgroup>
+                ))}
               </select>
+              <div className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[#F3BE53] text-[9px]">
+                ▼
+              </div>
             </div>
 
             {/* Dark/Light mode toggle */}
