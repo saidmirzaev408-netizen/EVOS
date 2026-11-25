@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import { initialProducts, initialCategories, samplePromoCodes, loyaltyRewards, categoryFallbacks } from '../data/products';
 import { branchesData } from '../data/branches';
-import { translations } from '../data/i18n';
+import { translations, languageOptions } from '../data/i18n';
 import { foodNameTranslations } from '../data/foodTranslations';
 import confetti from 'canvas-confetti';
 
@@ -81,13 +81,93 @@ export const AppProvider = ({ children }) => {
     return Number(localStorage.getItem('evos_loyalty') || 18500);
   });
   // User profile
-  const [user, setUser] = useState({
-    name: 'Jasur Aliyev',
-    phone: '+998 90 123 45 67',
-    tier: 'Gold',
-    tierDiscount: 5,
-    address: 'Toshkent sh., Chilonzor tumani, 9-mavze, 24-uy'
+  const [user, setUser] = useState(() => {
+    const saved = localStorage.getItem('istiqlol_user');
+    if (saved) {
+      try { return JSON.parse(saved); } catch (e) { }
+    }
+    return {
+      name: 'Jasur Aliyev',
+      phone: '+998 90 123 45 67',
+      tier: 'Gold',
+      tierDiscount: 5,
+      address: 'Toshkent sh., Chilonzor tumani, 9-mavze, 24-uy'
+    };
   });
+  // Authentication state
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    const saved = localStorage.getItem('istiqlol_is_auth');
+    return saved !== null ? saved === 'true' : false;
+  });
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState('register'); // 'register' | 'login'
+
+  const openAuthModal = (mode = 'register') => {
+    setAuthMode(mode);
+    setAppMode(mode);
+    setIsAuthModalOpen(false);
+  };
+
+  const goToLogin = () => {
+    setAuthMode('login');
+    setAppMode('login');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const goToRegister = () => {
+    setAuthMode('register');
+    setAppMode('register');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const loginUser = ({ phone, password, name }) => {
+    const loggedUser = {
+      ...user,
+      phone: phone || user.phone,
+      name: name || user.name || 'Mijoz'
+    };
+    setUser(loggedUser);
+    setIsAuthenticated(true);
+    localStorage.setItem('istiqlol_is_auth', 'true');
+    localStorage.setItem('istiqlol_user', JSON.stringify(loggedUser));
+    setIsAuthModalOpen(false);
+    setAppMode('client');
+    confetti({ particleCount: 75, spread: 65, origin: { y: 0.65 } });
+    showToast(`Xush kelibsiz, ${loggedUser.name}!`);
+  };
+
+  const registerUser = ({ name, phone, password, birthday }) => {
+    const welcomeBonus = 20000;
+    const newPoints = loyaltyPoints + welcomeBonus;
+    setLoyaltyPoints(newPoints);
+    localStorage.setItem('evos_loyalty', newPoints.toString());
+
+    const newUser = {
+      name: name || 'Mehmon',
+      phone: phone || '+998 90 000 00 00',
+      tier: 'Gold VIP',
+      tierDiscount: 5,
+      birthday: birthday || '',
+      registeredAt: new Date().toLocaleDateString(),
+      address: user.address || 'Toshkent sh., Chilonzor'
+    };
+    setUser(newUser);
+    setIsAuthenticated(true);
+    localStorage.setItem('istiqlol_is_auth', 'true');
+    localStorage.setItem('istiqlol_user', JSON.stringify(newUser));
+    setIsAuthModalOpen(false);
+    setAppMode('client');
+    confetti({ particleCount: 110, spread: 85, origin: { y: 0.6 } });
+    showToast(`Tabriklaymiz, ${newUser.name}! +20 000 bonus ball berildi 🎉`);
+  };
+
+  const logoutUser = () => {
+    setIsAuthenticated(false);
+    localStorage.setItem('istiqlol_is_auth', 'false');
+    setIsProfileOpen(false);
+    setAppMode('client');
+    showToast('Tizimdan chiqildi');
+  };
   // Orders list
   const [orders, setOrders] = useState(() => {
     const saved = localStorage.getItem('evos_orders');
@@ -421,6 +501,12 @@ export const AppProvider = ({ children }) => {
     isTrackingOpen, setIsTrackingOpen,
     activeTrackingOrder, setActiveTrackingOrder,
     isProfileOpen, setIsProfileOpen,
+    isAuthenticated, setIsAuthenticated,
+    isAuthModalOpen, setIsAuthModalOpen,
+    authMode, setAuthMode,
+    openAuthModal,
+    goToLogin, goToRegister,
+    loginUser, registerUser, logoutUser,
     isLocationModalOpen, setIsLocationModalOpen,
     deliveryLocation, setDeliveryLocation,
     isQrModalOpen, setIsQrModalOpen,
@@ -442,6 +528,7 @@ export const AppProvider = ({ children }) => {
     loyaltyRewards,
     categoryFallbacks,
     branchesData,
+    languageOptions,
     t: (key) => translations[lang]?.[key] || translations['uz']?.[key] || key
   };
 

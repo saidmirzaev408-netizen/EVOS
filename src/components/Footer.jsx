@@ -1,7 +1,9 @@
 import React from 'react';
 import { IstiqlolLogo } from './IstiqlolLogo';
+import { useApp } from '../context/AppContext';
 
 export const Footer = () => {
+  const { goToLogin, goToRegister } = useApp();
   return (
     <footer className="bg-gray-950 text-white pt-14 pb-20 md:pb-12 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,6 +45,8 @@ export const Footer = () => {
             <h4 className="text-xs font-black uppercase text-gray-300 tracking-wider">Kompaniya</h4>
             <ul className="space-y-2 text-xs text-gray-400">
               <li><a href="#" className="hover:text-white">Biz haqimizda</a></li>
+              <li><button type="button" onClick={() => goToRegister()} className="hover:text-[#F3BE53] text-left transition-colors">🎁 Ro'yxatdan o'tish (+20 000 ball)</button></li>
+              <li><button type="button" onClick={() => goToLogin()} className="hover:text-[#F3BE53] text-left transition-colors">🔐 Profilga kirish (Login)</button></li>
               <li><a href="#" className="hover:text-white">Filiallar xaritasi</a></li>
               <li><a href="#" className="hover:text-white">Karyera va Bo'sh ish o'rinlari</a></li>
               <li><a href="#" className="hover:text-white">Halal Sertifikati</a></li>

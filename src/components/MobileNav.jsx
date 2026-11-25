@@ -5,7 +5,8 @@ import { Icon } from './Icons';
 export const MobileNav = () => {
   const {
     setIsCartOpen, setIsProfileOpen, setIsTrackingOpen,
-    cart, appMode, orders, setActiveTrackingOrder, setIsLocationModalOpen
+    cart, appMode, orders, setActiveTrackingOrder, setIsLocationModalOpen,
+    isAuthenticated, openAuthModal
   } = useApp();
 
   if (appMode === 'admin') return null;
@@ -80,7 +81,7 @@ export const MobileNav = () => {
         {/* Profile */}
         <button
           type="button"
-          onClick={() => setIsProfileOpen(true)}
+          onClick={() => (isAuthenticated ? setIsProfileOpen(true) : openAuthModal('login'))}
           className="w-10 h-10 rounded-full hover:bg-[#2A2F25] flex items-center justify-center hover:text-white transition-colors"
           aria-label="Profile"
         >

@@ -46,7 +46,7 @@ export const CartDrawer = () => {
             <div className="flex items-center space-x-2">
               <Icon name="shopping-bag" className="w-5 h-5 text-[#F3BE53]" />
               <h2 className="text-lg font-black text-white">
-                Savatcha ({cart.reduce((s, i) => s + i.quantity, 0)})
+                {t('cart') || 'Savatcha'} ({cart.reduce((s, i) => s + i.quantity, 0)})
               </h2>
             </div>
             <button
@@ -157,13 +157,13 @@ export const CartDrawer = () => {
                   onClick={handleApplyPromo}
                   className="bg-[#2A2F25] hover:bg-[#343B2E] border border-[#3A4234] text-xs font-black px-4 py-2 rounded-xl text-[#F3BE53]"
                 >
-                  Qo'llash
+                  {t('applyPromo') || "Qo'llash"}
                 </button>
               </div>
 
               {appliedPromo && (
                 <div className="flex items-center justify-between text-xs font-black text-[#00A859] bg-[#00A859]/10 p-2.5 rounded-xl border border-[#00A859]/30">
-                  <span>✓ Promokod faol: {appliedPromo.code}</span>
+                  <span>✓ {t('promoApplied') || 'Promokod faol'}: {appliedPromo.code}</span>
                   <button onClick={() => setAppliedPromo(null)} className="text-gray-400 hover:text-white">✕</button>
                 </div>
               )}
@@ -171,23 +171,23 @@ export const CartDrawer = () => {
               {/* Calculations */}
               <div className="space-y-1.5 text-xs text-gray-400">
                 <div className="flex justify-between">
-                  <span>Mahsulotlar summasi:</span>
+                  <span>{t('subtotal') || 'Mahsulotlar summasi'}:</span>
                   <span className="text-white font-bold">{formatUZS(subtotal)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Yetkazib berish:</span>
+                  <span>{t('deliveryFee') || 'Yetkazib berish'}:</span>
                   <span className={deliveryFee === 0 ? "text-[#00A859] font-black" : "text-white font-bold"}>
-                    {deliveryFee === 0 ? 'BEPUL' : formatUZS(deliveryFee)}
+                    {deliveryFee === 0 ? (t('freeDelivery') || 'BEPUL') : formatUZS(deliveryFee)}
                   </span>
                 </div>
                 {discountAmount > 0 && (
                   <div className="flex justify-between text-[#F3BE53]">
-                    <span>Chegirma:</span>
+                    <span>{t('discount') || 'Chegirma'}:</span>
                     <span className="font-black">-{formatUZS(discountAmount)}</span>
                   </div>
                 )}
                 <div className="flex justify-between text-base font-black text-white pt-2 border-t border-[#2C3227]">
-                  <span>Jami to'lov:</span>
+                  <span>{t('total') || "Jami to'lov"}:</span>
                   <span className="text-xl text-[#F3BE53]">{formatUZS(grandTotal)}</span>
                 </div>
               </div>
@@ -201,7 +201,7 @@ export const CartDrawer = () => {
                 }}
                 className="w-full py-4 rounded-full bg-[#F3BE53] hover:bg-[#E5A934] text-[#131512] font-black text-sm tracking-wide shadow-xl shadow-[#F3BE53]/25 active:scale-95 transition-transform flex items-center justify-center space-x-2"
               >
-                <span>Buyurtmani rasmiylashtirish</span>
+                <span>{t('checkout') || 'Buyurtmani rasmiylashtirish'}</span>
                 <span>→</span>
               </button>
 

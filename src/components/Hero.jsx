@@ -90,8 +90,8 @@ export const Hero = () => {
               {/* Main Hero Food Image */}
               <div className="relative rounded-[32px] overflow-hidden shadow-2xl border border-[#353B2F] transform hover:scale-[1.01] transition-transform bg-[#1C1F18]">
                 <img
-                  src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1000&q=85"
-                  alt="Tandir Somsa & Desserts"
+                  src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=1000&q=85"
+                  alt="ISTIQLOL Fast Food"
                   className="w-full h-80 sm:h-96 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#131512] via-transparent to-black/30"></div>

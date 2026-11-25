@@ -132,7 +132,7 @@ export const initialProducts = [
       en: 'Multi-layered flaky buttery pastry stuffed with tender beef and crushed cumin'
     },
     price: 15000,
-    image: 'https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=800&q=80',
     calories: '330 kcal',
     weight: '170g',
     rating: 4.88,
@@ -155,7 +155,7 @@ export const initialProducts = [
       en: 'Melted stretchy mozzarella cheese infused with aromatic fresh garden herbs'
     },
     price: 13000,
-    image: 'https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=800&q=80',
     calories: '280 kcal',
     weight: '150g',
     rating: 4.8,
@@ -178,7 +178,7 @@ export const initialProducts = [
       en: 'Lean chicken breast strips with sweet onions and gentle oriental spices'
     },
     price: 12000,
-    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80',
     calories: '260 kcal',
     weight: '155g',
     rating: 4.75,
@@ -201,7 +201,7 @@ export const initialProducts = [
       en: 'Autumn sweet pumpkin roasted with butter and a dash of black pepper'
     },
     price: 9000,
-    image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80',
     calories: '210 kcal',
     weight: '150g',
     rating: 4.7,
@@ -252,7 +252,7 @@ export const initialProducts = [
       en: 'Airy flaky puff pastry filled with rich Madagascar vanilla custard'
     },
     price: 26000,
-    image: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=800&q=80',
     calories: '390 kcal',
     weight: '170g',
     rating: 4.92,
@@ -298,7 +298,7 @@ export const initialProducts = [
       en: 'Crisp choux pastry shell brimming with Belgian dark chocolate ganache'
     },
     price: 18000,
-    image: 'https://images.unsplash.com/photo-1612203985729-70726954388c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&w=800&q=80',
     calories: '290 kcal',
     weight: '120g',
     rating: 4.84,
@@ -321,7 +321,7 @@ export const initialProducts = [
       en: 'Famous Basque burnt cheesecake with caramel notes and silky melting heart'
     },
     price: 32000,
-    image: 'https://images.unsplash.com/photo-1524351199678-941a58a3df50?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80',
     calories: '420 kcal',
     weight: '180g',
     rating: 4.94,
@@ -349,7 +349,7 @@ export const initialProducts = [
     },
     price: 22000,
     oldPrice: 25000,
-    image: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1612392062798-e44c3c7a5edb?auto=format&fit=crop&w=800&q=80',
     calories: '390 kcal',
     weight: '200g',
     rating: 4.88,
@@ -372,7 +372,7 @@ export const initialProducts = [
       en: 'Toasted sesame bun, jumbo grilled sausage, cheddar cheese and crispy fried onion flakes'
     },
     price: 26000,
-    image: 'https://images.unsplash.com/photo-1627059173264-b5a81e3cf5ea?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1515190119030-0f41b81f8c18?auto=format&fit=crop&w=800&q=80',
     calories: '450 kcal',
     weight: '250g',
     rating: 4.82,
@@ -395,7 +395,7 @@ export const initialProducts = [
       en: 'Two juicy sausages, smothered in warm cheese sauce with sliced gherkins'
     },
     price: 29000,
-    image: 'https://images.unsplash.com/photo-1612531386530-97286d97c2d2?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=800&q=80',
     calories: '520 kcal',
     weight: '280g',
     rating: 4.79,
@@ -423,7 +423,7 @@ export const initialProducts = [
     },
     price: 20000,
     oldPrice: 23000,
-    image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=80',
     calories: '140 kcal',
     weight: '300ml',
     rating: 4.95,
@@ -446,7 +446,7 @@ export const initialProducts = [
       en: 'Three layered espresso and steamed whole milk with delicate sweet notes'
     },
     price: 22000,
-    image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=800&q=80',
     calories: '160 kcal',
     weight: '350ml',
     rating: 4.88,
@@ -469,7 +469,7 @@ export const initialProducts = [
       en: 'Bold freshly pulled espresso diluted with hot water for pure clean coffee taste'
     },
     price: 16000,
-    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80',
     calories: '15 kcal',
     weight: '250ml',
     rating: 4.78,
@@ -492,7 +492,7 @@ export const initialProducts = [
       en: 'Cold milk, fresh espresso and golden caramel syrup served over ice cubes'
     },
     price: 24000,
-    image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80',
     calories: '220 kcal',
     weight: '400ml',
     rating: 4.92,
@@ -519,7 +519,7 @@ export const initialProducts = [
       en: 'Premium green whole-leaf tea brewed with fresh lemon slices and natural honey'
     },
     price: 14000,
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=80',
     calories: '25 kcal',
     weight: '800ml',
     rating: 4.9,
@@ -542,7 +542,7 @@ export const initialProducts = [
       en: 'Robust black tea blended with wild mountain thyme, oregano and wild mint'
     },
     price: 15000,
-    image: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1593648022016-de89fffe57b7?auto=format&fit=crop&w=800&q=80',
     calories: '10 kcal',
     weight: '800ml',
     rating: 4.88,
@@ -565,7 +565,7 @@ export const initialProducts = [
       en: 'Crushed sweet raspberries paired with cool garden mint and warm berry notes'
     },
     price: 18000,
-    image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1455099929444-27ebc71f8b6d?auto=format&fit=crop&w=800&q=80',
     calories: '65 kcal',
     weight: '800ml',
     rating: 4.93,
@@ -593,7 +593,7 @@ export const initialProducts = [
     },
     price: 18000,
     oldPrice: 22000,
-    image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1546171753-97d7676e4602?auto=format&fit=crop&w=800&q=80',
     calories: '95 kcal',
     weight: '450ml',
     rating: 4.97,
@@ -616,7 +616,7 @@ export const initialProducts = [
       en: 'Sweet ripe strawberries crushed with cool garden mint and refreshing lime'
     },
     price: 20000,
-    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1587890309246-85b01af5dfac?auto=format&fit=crop&w=800&q=80',
     calories: '115 kcal',
     weight: '450ml',
     rating: 4.91,
@@ -639,7 +639,7 @@ export const initialProducts = [
       en: 'Vibrant blue citrus essence combined with crisp mint and lime fizz'
     },
     price: 21000,
-    image: 'https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80',
     calories: '110 kcal',
     weight: '450ml',
     rating: 4.86,
@@ -712,7 +712,7 @@ export const initialProducts = [
       en: 'Pure cold-pressed 100% natural orange juice loaded with vitamin C'
     },
     price: 25000,
-    image: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=800&q=80',
     calories: '120 kcal',
     weight: '350ml',
     rating: 4.95,
@@ -740,7 +740,7 @@ export const initialProducts = [
     },
     price: 36000,
     oldPrice: 40000,
-    image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1644787352843-0c460d37e6f8?auto=format&fit=crop&w=800&q=80',
     calories: '540 kcal',
     weight: '320g',
     rating: 4.94,
@@ -763,7 +763,7 @@ export const initialProducts = [
       en: 'Melted Dutch cheese, juicy grilled beef, signature cheese sauce and fresh veggies'
     },
     price: 41000,
-    image: 'https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80',
     calories: '620 kcal',
     weight: '350g',
     rating: 4.88,
@@ -841,7 +841,7 @@ export const samplePromoCodes = [
 export const loyaltyRewards = [
   { id: 'rew-1', name: 'Pepsi 0.5L', points: 8000, category: 'napitkalar', image: 'https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=400&q=80' },
   { id: 'rew-2', name: 'Tandir Somsa', points: 10000, category: 'somsa', image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=400&q=80' },
-  { id: 'rew-3', name: 'Fransuzcha Hot-Dog', points: 16000, category: 'hotdogs', image: 'https://images.unsplash.com/photo-1627059173264-b5a81e3cf5ea?auto=format&fit=crop&w=400&q=80' },
+  { id: 'rew-3', name: 'Fransuzcha Hot-Dog', points: 16000, category: 'hotdogs', image: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=400&q=80' },
   { id: 'rew-4', name: 'Klassik Medovik', points: 18000, category: 'pirojniy', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80' }
 ];
 
@@ -849,11 +849,11 @@ export const categoryFallbacks = {
   somsa: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80',
   pirojniy: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80',
   hotdogs: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=800&q=80',
-  coffee: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=80',
+  coffee: 'https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=80',
   tea: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
-  mojito: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80',
+  mojito: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80',
   napitkalar: 'https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=800&q=80',
-  lavash: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80',
+  lavash: 'https://images.unsplash.com/photo-1644787352843-0c460d37e6f8?auto=format&fit=crop&w=800&q=80',
   burgers: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80',
   combos: 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=800&q=80',
   default: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80'

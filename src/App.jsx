@@ -18,6 +18,8 @@ import { CartDrawer } from './components/CartDrawer';
 import { CheckoutModal } from './components/CheckoutModal';
 import { OrderTrackingModal } from './components/OrderTrackingModal';
 import { LoyaltyProfileModal } from './components/LoyaltyProfileModal';
+import { AuthModal } from './components/AuthModal';
+import { AuthPage } from './components/AuthPage';
 import { QrModal } from './components/QrModal';
 import { LiveChatWidget } from './components/LiveChatWidget';
 import { MobileNav } from './components/MobileNav';
@@ -32,6 +34,8 @@ export function App() {
       
       {appMode === 'admin' ? (
         <AdminDashboard />
+      ) : appMode === 'login' || appMode === 'register' ? (
+        <AuthPage />
       ) : (
         <>
           <Header />
@@ -53,6 +57,7 @@ export function App() {
           <CheckoutModal />
           <OrderTrackingModal />
           <LoyaltyProfileModal />
+          <AuthModal />
           <QrModal />
           <LiveChatWidget />
           <MobileNav />

@@ -7,12 +7,16 @@ export const ProductDetailsModal = () => {
   const {
     isDetailsOpen, setIsDetailsOpen,
     activeProductModal, addToCart, lang, t,
-    categoryFallbacks, favorites, toggleFavorite, showToast
+    categoryFallbacks, favorites, toggleFavorite, showToast,
+    categories
   } = useApp();
 
   if (!isDetailsOpen || !activeProductModal) return null;
 
   const isFav = favorites.includes(activeProductModal.id);
+
+  const catObj = categories?.find(c => c.id === activeProductModal?.category);
+  const categoryLabel = catObj ? (catObj.name[lang] || catObj.name.ru || catObj.name.uz) : activeProductModal?.category;
 
   // Portion sizes: Small, Normal, Large, Extra Large (matching screenshot)
   const [portion, setPortion] = useState('Normal');
@@ -100,8 +104,8 @@ export const ProductDetailsModal = () => {
 
           {/* Category tag */}
           <div className="absolute bottom-4 left-5">
-            <span className="bg-[#F3BE53] text-[#131512] text-xs font-black px-3 py-1 rounded-full uppercase shadow-md">
-              {activeProductModal.category}
+            <span className="bg-[#F3BE53] text-[#131512] text-xs font-black px-3 py-1 rounded-full uppercase shadow-md notranslate" translate="no">
+              {categoryLabel}
             </span>
           </div>
         </div>
@@ -118,8 +122,8 @@ export const ProductDetailsModal = () => {
               <span>•</span>
               <span>{activeProductModal.calories}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-              {activeProductModal.name[lang] || activeProductModal.name.uz}
+            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight notranslate" translate="no">
+              {activeProductModal.name[lang] || activeProductModal.name.ru || activeProductModal.name.uz}
             </h2>
           </div>
 
@@ -268,7 +272,7 @@ export const ProductDetailsModal = () => {
         <div className="p-4 sm:p-5 bg-[#171914] border-t border-[#2F3528] flex items-center justify-between sticky bottom-0 rounded-b-[32px]">
           <div>
             <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
-              Jami (Total)
+              {t('total') || 'Jami'}
             </p>
             <p className="text-xl sm:text-2xl font-black text-white">
               {formatUZS(totalItemPrice)}
@@ -281,7 +285,7 @@ export const ProductDetailsModal = () => {
             className="py-3.5 px-7 rounded-full bg-[#F3BE53] hover:bg-[#E5A934] text-[#131512] font-black text-sm tracking-wide shadow-xl shadow-[#F3BE53]/25 active:scale-95 transition-transform flex items-center space-x-2"
           >
             <Icon name="shopping-bag" className="w-4 h-4 text-[#131512]" />
-            <span>Savatchaga qo'shish</span>
+            <span>{t('addToCart') || "Savatchaga qo'shish"}</span>
           </button>
         </div>
 

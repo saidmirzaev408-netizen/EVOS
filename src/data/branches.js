@@ -1,11 +1,11 @@
-// EVOS Restaurant Branches Data
+// ISTIQLOL Restaurant Branches Data
 export const branchesData = [
   {
     id: 'br-1',
     name: {
-      uz: 'EVOS — Chilonzor',
-      ru: 'EVOS — Чиланзар',
-      en: 'EVOS — Chilonzor Branch'
+      uz: 'ISTIQLOL — Chilonzor',
+      ru: 'ISTIQLOL — Чиланзар',
+      en: 'ISTIQLOL — Chilonzor Branch'
     },
     address: {
       uz: 'Toshkent sh., Chilonzor tumani, Bunyodkor shoh ko\'chasi, 28/1',
@@ -29,9 +29,9 @@ export const branchesData = [
   {
     id: 'br-2',
     name: {
-      uz: 'EVOS — Amir Temur xiyoboni',
-      ru: 'EVOS — Сквер Амира Темура',
-      en: 'EVOS — Amir Temur Square'
+      uz: 'ISTIQLOL — Amir Temur xiyoboni',
+      ru: 'ISTIQLOL — Сквер Амира Темура',
+      en: 'ISTIQLOL — Amir Temur Square'
     },
     address: {
       uz: 'Toshkent sh., Yunusobod tumani, Amir Temur ko\'chasi, 14',
@@ -55,9 +55,9 @@ export const branchesData = [
   {
     id: 'br-3',
     name: {
-      uz: 'EVOS — Buyuk Ipak Yo\'li',
-      ru: 'EVOS — Буюк Ипак Йули',
-      en: 'EVOS — Buyuk Ipak Yoli'
+      uz: 'ISTIQLOL — Buyuk Ipak Yo\'li',
+      ru: 'ISTIQLOL — Буюк Ипак Йули',
+      en: 'ISTIQLOL — Buyuk Ipak Yoli'
     },
     address: {
       uz: 'Toshkent sh., Mirzo Ulug\'bek tumani, Mirzo Ulug\'bek ko\'chasi, 52',
@@ -81,9 +81,9 @@ export const branchesData = [
   {
     id: 'br-4',
     name: {
-      uz: 'EVOS — Yunusobod Mega Planet',
-      ru: 'EVOS — Юнусабад Мега Планет',
-      en: 'EVOS — Yunusabad Mega Planet'
+      uz: 'ISTIQLOL — Yunusobod Mega Planet',
+      ru: 'ISTIQLOL — Юнусабад Мега Планет',
+      en: 'ISTIQLOL — Yunusabad Mega Planet'
     },
     address: {
       uz: 'Toshkent sh., Yunusobod tumani, Ahmad Donish ko\'chasi, 2-B',
@@ -107,9 +107,9 @@ export const branchesData = [
   {
     id: 'br-5',
     name: {
-      uz: 'EVOS — Sergeli Yangi Hayot',
-      ru: 'EVOS — Сергели Янги Хаёт',
-      en: 'EVOS — Sergeli New Life'
+      uz: 'ISTIQLOL — Sergeli Yangi Hayot',
+      ru: 'ISTIQLOL — Сергели Янги Хаёт',
+      en: 'ISTIQLOL — Sergeli New Life'
     },
     address: {
       uz: 'Toshkent sh., Sergeli tumani, Yangi Sergeli ko\'chasi, 19',
@@ -133,9 +133,9 @@ export const branchesData = [
   {
     id: 'br-6',
     name: {
-      uz: 'EVOS — Samarqand Registon',
-      ru: 'EVOS — Самарканд Регистан',
-      en: 'EVOS — Samarkand Registan'
+      uz: 'ISTIQLOL — Samarqand Registon',
+      ru: 'ISTIQLOL — Самарканд Регистан',
+      en: 'ISTIQLOL — Samarkand Registan'
     },
     address: {
       uz: 'Samarqand sh., Registon ko\'chasi, 45',

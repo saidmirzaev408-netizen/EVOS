@@ -156,6 +156,42 @@ export const Icon = ({ name, className = "w-5 h-5", filled, ...props }) => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
         </svg>
       );
+    case 'lock':
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M7 11V7a5 5 0 0110 0v4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      );
+    case 'eye':
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>
+      );
+    case 'eye-off':
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
+        </svg>
+      );
+    case 'gift':
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
+          <polyline points="20 12 20 22 4 22 4 12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <rect x="2" y="7" width="20" height="5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <line x1="12" y1="22" x2="12" y2="7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      );
+    case 'sparkles':
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+        </svg>
+      );
     default:
       return <span className={className}>•</span>;
   }

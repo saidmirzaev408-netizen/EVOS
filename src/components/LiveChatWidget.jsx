@@ -3,7 +3,7 @@ import { useApp } from '../context/AppContext';
 import { Icon } from './Icons';
 
 export const LiveChatWidget = () => {
-  const { isChatOpen, setIsChatOpen, t } = useApp();
+  const { isChatOpen, setIsChatOpen, t, lang } = useApp();
   const [messages, setMessages] = useState([
     {
       id: 1,
@@ -14,6 +14,12 @@ export const LiveChatWidget = () => {
   ]);
   const [input, setInput] = useState('');
   const messagesEndRef = useRef(null);
+
+  const quickChips = lang === 'ru'
+    ? ['Где мой заказ?', 'Есть ли акции?', 'Стоимость доставки?']
+    : lang === 'en'
+    ? ['Where is my order?', 'Any promotions?', 'Delivery fee?']
+    : ['Buyurtmam qayerda?', 'Aksiyalar bormi?', 'Yetkazish narxi?'];
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -38,7 +44,7 @@ export const LiveChatWidget = () => {
         return prev;
       });
     }
-  }, [t]);
+  }, [t, lang]);
 
   const handleSend = (textToSend) => {
     const query = textToSend || input;
@@ -60,12 +66,32 @@ export const LiveChatWidget = () => {
       let reply = "ISTIQLOL mutaxassisi tez orada siz bilan bog'lanadi!";
       const q = query.toLowerCase();
 
-      if (q.includes('buyurtma') || q.includes('kuryer') || q.includes('qayerda') || q.includes('заказ')) {
-        reply = "Buyurtmangiz holatini bilish uchun 'Mening buyurtmalarim' bo'limiga kiring yoki telefon raqamingizni qoldiring, operatorimiz darhol tekshirib beradi.";
-      } else if (q.includes('aksiya') || q.includes('promokod') || q.includes('скидк') || q.includes('promo')) {
-        reply = "Hozirda ISTIQLOL2025 promokodi bilan barcha menyuga 15% chegirma amal qilmoqda!";
-      } else if (q.includes('yetkazish') || q.includes('narx') || q.includes('dostavka') || q.includes('доставк')) {
-        reply = "Toshkent bo'ylab 100 000 UZS dan yuqori buyurtmalar bepul yetkaziladi. Standart yetkazish narxi — 12 000 UZS (25-35 daqiqa).";
+      if (lang === 'ru') {
+        reply = "Специалист службы заботы ISTIQLOL скоро свяжется с вами!";
+        if (q.includes('заказ') || q.includes('где') || q.includes('курьер') || q.includes('статус')) {
+          reply = "Чтобы узнать статус заказа, перейдите в раздел «Мои заказы» или напишите номер телефона, оператор сразу проверит.";
+        } else if (q.includes('акци') || q.includes('скидк') || q.includes('промо') || q.includes('promo')) {
+          reply = "Сейчас действует промокод ISTIQLOL2025 со скидкой 15% на всё меню!";
+        } else if (q.includes('доставк') || q.includes('стоимост') || q.includes('цен') || q.includes('курьер')) {
+          reply = "Доставка по городу от 100 000 UZS бесплатная. Стандартная доставка — 12 000 UZS (25-35 минут).";
+        }
+      } else if (lang === 'en') {
+        reply = "An ISTIQLOL representative will reply shortly!";
+        if (q.includes('order') || q.includes('where') || q.includes('status') || q.includes('courier')) {
+          reply = "To track your order, please open 'My Orders' or provide your phone number and our operator will assist right away.";
+        } else if (q.includes('promo') || q.includes('discount') || q.includes('offer')) {
+          reply = "Use promo code ISTIQLOL2025 for 15% off across all items!";
+        } else if (q.includes('delivery') || q.includes('price') || q.includes('fee')) {
+          reply = "Free delivery on orders over 100,000 UZS. Standard delivery is 12,000 UZS (25-35 min).";
+        }
+      } else {
+        if (q.includes('buyurtma') || q.includes('kuryer') || q.includes('qayerda') || q.includes('заказ')) {
+          reply = "Buyurtmangiz holatini bilish uchun 'Mening buyurtmalarim' bo'limiga kiring yoki telefon raqamingizni qoldiring, operatorimiz darhol tekshirib beradi.";
+        } else if (q.includes('aksiya') || q.includes('promokod') || q.includes('скидк') || q.includes('promo')) {
+          reply = "Hozirda ISTIQLOL2025 promokodi bilan barcha menyuga 15% chegirma amal qilmoqda!";
+        } else if (q.includes('yetkazish') || q.includes('narx') || q.includes('dostavka') || q.includes('доставк')) {
+          reply = "Toshkent bo'ylab 100 000 UZS dan yuqori buyurtmalar bepul yetkaziladi. Standart yetkazish narxi — 12 000 UZS (25-35 daqiqa).";
+        }
       }
 
       setMessages(prev => [...prev, {
@@ -150,7 +176,7 @@ export const LiveChatWidget = () => {
 
           {/* Quick Prompt Chips */}
           <div className="px-3 py-2.5 bg-[#17060D] border-t border-[#3A101C] flex gap-1.5 overflow-x-auto no-scrollbar">
-            {['Buyurtmam qayerda?', 'Aksiyalar bormi?', 'Yetkazish narxi?'].map((chip, idx) => (
+            {quickChips.map((chip, idx) => (
               <button
                 key={idx}
                 type="button"

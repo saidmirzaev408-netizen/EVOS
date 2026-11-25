@@ -12,7 +12,8 @@ export const Header = () => {
     cart, loyaltyPoints,
     setIsCartOpen, setIsProfileOpen, setIsQrModalOpen,
     searchQuery, setSearchQuery, t, activeTable,
-    deliveryLocation, setDeliveryLocation, setIsLocationModalOpen, showToast
+    deliveryLocation, setDeliveryLocation, setIsLocationModalOpen, showToast,
+    isAuthenticated, openAuthModal, user
   } = useApp();
 
   const totalCartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -211,14 +212,51 @@ export const Header = () => {
               <Icon name={theme === 'dark' ? 'sun' : 'moon'} className="w-4 h-4 text-[#F3BE53]" />
             </button>
 
-            {/* Loyalty / Profile Button */}
-            <button
-              onClick={() => setIsProfileOpen(true)}
-              className="hidden sm:flex items-center space-x-1.5 bg-[#2A2617] border border-[#F3BE53]/40 text-[#F3BE53] px-3 py-1.5 rounded-full text-xs font-black hover:bg-[#342F1C] transition-colors"
-            >
-              <span>⭐</span>
-              <span>{loyaltyPoints.toLocaleString()}</span>
-            </button>
+            {/* Auth / Profile & Loyalty */}
+            {isAuthenticated ? (
+              <div className="flex items-center space-x-1.5">
+                <button
+                  type="button"
+                  onClick={() => setIsProfileOpen(true)}
+                  className="hidden sm:flex items-center space-x-1.5 bg-[#2A2617] border border-[#F3BE53]/40 text-[#F3BE53] px-3 py-1.5 rounded-full text-xs font-black hover:bg-[#342F1C] transition-colors shadow-sm"
+                  title="Bonus ballar"
+                >
+                  <span>⭐</span>
+                  <span>{loyaltyPoints.toLocaleString()}</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setIsProfileOpen(true)}
+                  className="flex items-center space-x-1.5 bg-[#250C16] hover:bg-[#34111F] text-white border border-[#4E1726] hover:border-[#F3BE53]/60 px-3 py-1.5 rounded-full text-xs font-bold transition-all shadow-sm group"
+                  title="Mening profilim"
+                >
+                  <Icon name="user" className="w-3.5 h-3.5 text-[#F3BE53] group-hover:scale-110 transition-transform" />
+                  <span className="hidden md:inline max-w-[90px] truncate">{user.name?.split(' ')[0] || 'Profil'}</span>
+                </button>
+              </div>
+            ) : (
+              <div className="flex items-center space-x-1 sm:space-x-1.5">
+                <button
+                  type="button"
+                  onClick={() => openAuthModal('login')}
+                  className="hidden md:flex items-center space-x-1 text-gray-300 hover:text-[#F3BE53] text-xs font-bold px-2.5 py-1.5 rounded-full transition-colors"
+                >
+                  <Icon name="lock" className="w-3.5 h-3.5 text-[#F3BE53]" />
+                  <span>{t('login') || 'Kirish'}</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => openAuthModal('register')}
+                  className="flex items-center space-x-1.5 bg-gradient-to-r from-[#BA1D3D] via-[#D82249] to-[#9B1832] hover:from-[#CF2044] hover:to-[#B01B3A] text-white px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-black shadow-md shadow-[#BA1D3D]/35 transition-all hover:scale-105 active:scale-95 border border-[#F3BE53]/40"
+                  title="Ro'yxatdan o'tish"
+                >
+                  <span className="text-xs">🎁</span>
+                  <span>Ro'yxatdan o'tish</span>
+                </button>
+              </div>
+            )}
 
             {/* Cart Button */}
             <button

@@ -7,10 +7,35 @@ export const ProductCard = ({ product }) => {
   const {
     lang, addToCart, favorites, toggleFavorite,
     setActiveProductModal, setIsDetailsOpen, t,
-    categoryFallbacks
+    categoryFallbacks, categories
   } = useApp();
 
   const isFav = favorites.includes(product.id);
+
+  const catObj = categories?.find(c => c.id === product.category);
+  const categoryLabel = catObj ? (catObj.name[lang] || catObj.name.ru || catObj.name.uz) : product.category;
+
+  // Localize badge text according to active language
+  const getBadgeText = (badge) => {
+    if (!badge) return null;
+    const b = badge.toUpperCase();
+    if (lang === 'ru') {
+      if (b.includes('XIT') || b.includes('HIT')) return 'ХИТ';
+      if (b.includes('POPULAR')) return 'ПОПУЛЯРНОЕ';
+      if (b.includes('PISHLQOLI') || b.includes('CHEESE')) return 'С СЫРОМ';
+      if (b.includes('MAVSUMIY') || b.includes('SEASON')) return 'СЕЗОННОЕ';
+      if (b.includes('ENG SARA') || b.includes('BEST')) return 'ЛУЧШЕЕ';
+      if (b.includes('PREMIUM')) return 'ПРЕМИУМ';
+    } else if (lang === 'en') {
+      if (b.includes('XIT') || b.includes('HIT')) return 'HOT';
+      if (b.includes('POPULAR')) return 'POPULAR';
+      if (b.includes('PISHLQOLI') || b.includes('CHEESE')) return 'CHEESY';
+      if (b.includes('MAVSUMIY') || b.includes('SEASON')) return 'SEASONAL';
+      if (b.includes('ENG SARA') || b.includes('BEST')) return 'BEST CHOICE';
+      if (b.includes('PREMIUM')) return 'PREMIUM';
+    }
+    return badge;
+  };
 
   const openDetails = () => {
     setActiveProductModal(product);
@@ -45,7 +70,7 @@ export const ProductCard = ({ product }) => {
 
             {product.badge && (
               <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase bg-[#F3BE53] text-[#131512] shadow-md">
-                {product.badge}
+                {getBadgeText(product.badge)}
               </span>
             )}
           </div>
@@ -73,23 +98,24 @@ export const ProductCard = ({ product }) => {
         {/* Content Info */}
         <div className="p-4 space-y-1.5">
           <div className="flex items-center justify-between">
-            <span className="text-[10px] font-black uppercase tracking-wider text-[#F3BE53]">
-              {product.category}
+            <span className="text-[10px] font-black uppercase tracking-wider text-[#F3BE53] notranslate" translate="no">
+              {categoryLabel}
             </span>
             <span className="text-[11px] text-gray-400">
-              Boshlang'ich narx
+              {t('startingPrice') || "Boshlang'ich narx"}
             </span>
           </div>
 
           <h3
             onClick={openDetails}
-            className="text-base font-extrabold text-white hover:text-[#F3BE53] cursor-pointer line-clamp-1 transition-colors"
+            className="text-base font-extrabold text-white hover:text-[#F3BE53] cursor-pointer line-clamp-1 transition-colors notranslate"
+            translate="no"
           >
-            {product.name[lang] || product.name.uz}
+            {product.name[lang] || product.name.ru || product.name.uz}
           </h3>
 
           <p className="text-xs text-gray-400 line-clamp-2 h-8 leading-relaxed">
-            {product.description[lang] || product.description.uz}
+            {product.description[lang] || product.description.ru || product.description.uz}
           </p>
         </div>
       </div>
@@ -113,7 +139,7 @@ export const ProductCard = ({ product }) => {
             className="flex items-center space-x-1.5 bg-[#F3BE53] hover:bg-[#E5A934] text-[#131512] text-xs font-black px-4 py-2 rounded-full shadow-md shadow-[#F3BE53]/20 active:scale-95 transition-all"
           >
             <Icon name="plus" className="w-3.5 h-3.5 text-[#131512]" />
-            <span>Savatchaga</span>
+            <span>{t('addToCart') || 'Savatchaga'}</span>
           </button>
         </div>
       </div>

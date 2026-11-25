@@ -9,7 +9,7 @@ export const LoyaltyProfileModal = () => {
     isProfileOpen, setIsProfileOpen,
     user, loyaltyPoints, setLoyaltyPoints,
     orders, addToCart, showToast, t,
-    loyaltyRewards
+    loyaltyRewards, logoutUser
   } = useApp();
 
   if (!isProfileOpen) return null;
@@ -173,6 +173,19 @@ export const LoyaltyProfileModal = () => {
               )}
             </div>
           )}
+
+          {/* Logout Action */}
+          <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-800 flex items-center justify-between">
+            <span className="text-xs text-gray-500">Faol hisob: {user.phone}</span>
+            <button
+              type="button"
+              onClick={logoutUser}
+              className="text-xs font-bold text-red-500 hover:text-red-400 flex items-center space-x-1 px-3 py-1.5 rounded-xl hover:bg-red-500/10 transition-colors"
+            >
+              <span>Chiqish</span>
+              <span>🚪</span>
+            </button>
+          </div>
 
         </div>
 

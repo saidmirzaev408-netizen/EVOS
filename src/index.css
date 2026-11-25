@@ -282,9 +282,9 @@ html.light .border-\[\#2E3626\] {
   border-color: #F0D6DC !important;
 }
 
-/* Typography in Light Mode */
-html:not(.dark) .text-white,
-html.light .text-white {
+/* Typography in Light Mode - keep white text on dark elements, buttons, and badges */
+html:not(.dark) .text-white:not(button):not(.bg-\[\#BA1D3D\] *):not(.bg-\[\#9B1832\] *):not(.bg-\[\#00A859\] *):not(.bg-red-600 *):not(.bg-black *):not(footer *),
+html.light .text-white:not(button):not(.bg-\[\#BA1D3D\] *):not(.bg-\[\#9B1832\] *):not(.bg-\[\#00A859\] *):not(.bg-red-600 *):not(.bg-black *):not(footer *) {
   color: #200810 !important;
 }
 
