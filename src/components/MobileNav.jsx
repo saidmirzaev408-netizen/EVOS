@@ -32,7 +32,7 @@ export const MobileNav = () => {
   return (
     <div className="md:hidden fixed bottom-4 inset-x-4 z-40 max-w-sm mx-auto">
       <div className="bg-[#1C1F18]/95 backdrop-blur-lg border border-[#353B2F] rounded-full py-2 px-3 shadow-2xl flex items-center justify-around text-gray-400">
-        
+
         {/* Active Home Circle (matching screenshot) */}
         <button
           type="button"

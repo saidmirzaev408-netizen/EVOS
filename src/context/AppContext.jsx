@@ -99,6 +99,9 @@ export const AppProvider = ({ children }) => {
     const saved = localStorage.getItem('istiqlol_is_auth');
     return saved !== null ? saved === 'true' : false;
   });
+  const [isAdmin, setIsAdmin] = useState(() => {
+    return localStorage.getItem('istiqlol_is_admin') === 'true';
+  });
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState('register'); // 'register' | 'login'
 
@@ -121,19 +124,52 @@ export const AppProvider = ({ children }) => {
   };
 
   const loginUser = ({ phone, password, name }) => {
+    const digits = (phone || '').replace(/\D/g, '');
+    const isAdminPhone = digits === '998971082442' || digits === '971082442';
+
+    if (isAdminPhone) {
+      if (password !== 'said201011') {
+        showToast('❌ Admin paroli noto\'g\'ri! Qaytadan urinib ko\'ring.', 'info');
+        return false;
+      }
+      const adminUser = {
+        ...user,
+        phone: '+998 97 108 24 42',
+        name: 'Said (Admin)',
+        role: 'admin',
+        tier: 'ADMIN VIP',
+        tierDiscount: 15
+      };
+      setUser(adminUser);
+      setIsAuthenticated(true);
+      setIsAdmin(true);
+      localStorage.setItem('istiqlol_is_auth', 'true');
+      localStorage.setItem('istiqlol_is_admin', 'true');
+      localStorage.setItem('istiqlol_user', JSON.stringify(adminUser));
+      setIsAuthModalOpen(false);
+      setAppMode('admin');
+      confetti({ particleCount: 95, spread: 75, origin: { y: 0.65 } });
+      showToast('👑 Admin sifatida xush kelibsiz, Said!');
+      return true;
+    }
+
     const loggedUser = {
       ...user,
       phone: phone || user.phone,
-      name: name || user.name || 'Mijoz'
+      name: name || (user.role === 'admin' ? 'Mijoz' : user.name) || 'Mijoz',
+      role: 'client'
     };
     setUser(loggedUser);
     setIsAuthenticated(true);
+    setIsAdmin(false);
     localStorage.setItem('istiqlol_is_auth', 'true');
+    localStorage.setItem('istiqlol_is_admin', 'false');
     localStorage.setItem('istiqlol_user', JSON.stringify(loggedUser));
     setIsAuthModalOpen(false);
     setAppMode('client');
     confetti({ particleCount: 75, spread: 65, origin: { y: 0.65 } });
     showToast(`Xush kelibsiz, ${loggedUser.name}!`);
+    return true;
   };
 
   const registerUser = ({ name, phone, password, birthday }) => {
@@ -145,6 +181,7 @@ export const AppProvider = ({ children }) => {
     const newUser = {
       name: name || 'Mehmon',
       phone: phone || '+998 90 000 00 00',
+      role: 'client',
       tier: 'Gold VIP',
       tierDiscount: 5,
       birthday: birthday || '',
@@ -153,7 +190,9 @@ export const AppProvider = ({ children }) => {
     };
     setUser(newUser);
     setIsAuthenticated(true);
+    setIsAdmin(false);
     localStorage.setItem('istiqlol_is_auth', 'true');
+    localStorage.setItem('istiqlol_is_admin', 'false');
     localStorage.setItem('istiqlol_user', JSON.stringify(newUser));
     setIsAuthModalOpen(false);
     setAppMode('client');
@@ -163,10 +202,20 @@ export const AppProvider = ({ children }) => {
 
   const logoutUser = () => {
     setIsAuthenticated(false);
+    setIsAdmin(false);
     localStorage.setItem('istiqlol_is_auth', 'false');
+    localStorage.setItem('istiqlol_is_admin', 'false');
     setIsProfileOpen(false);
+    setIsLoyaltyOpen(false);
     setAppMode('client');
     showToast('Tizimdan chiqildi');
+  };
+
+  const updateUserProfile = (updates) => {
+    const updated = { ...user, ...updates };
+    setUser(updated);
+    localStorage.setItem('istiqlol_user', JSON.stringify(updated));
+    showToast('Profil ma\'lumotlari muvaffaqiyatli saqlandi! ✅');
   };
   // Orders list
   const [orders, setOrders] = useState(() => {
@@ -219,6 +268,7 @@ export const AppProvider = ({ children }) => {
   const [isTrackingOpen, setIsTrackingOpen] = useState(false);
   const [activeTrackingOrder, setActiveTrackingOrder] = useState(null);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [isLoyaltyOpen, setIsLoyaltyOpen] = useState(false);
   const [isQrModalOpen, setIsQrModalOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -501,7 +551,10 @@ export const AppProvider = ({ children }) => {
     isTrackingOpen, setIsTrackingOpen,
     activeTrackingOrder, setActiveTrackingOrder,
     isProfileOpen, setIsProfileOpen,
+    isLoyaltyOpen, setIsLoyaltyOpen,
+    updateUserProfile,
     isAuthenticated, setIsAuthenticated,
+    isAdmin, setIsAdmin,
     isAuthModalOpen, setIsAuthModalOpen,
     authMode, setAuthMode,
     openAuthModal,

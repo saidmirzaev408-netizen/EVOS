@@ -3,16 +3,31 @@ import { useApp } from '../context/AppContext';
 import { Icon } from './Icons';
 import { IstiqlolLogo } from './IstiqlolLogo';
 import { formatUZS } from '../utils/formatters';
+import { StaffPanel, CouriersPanel, usePersistedList, defaultCouriers, transportMeta, calcDeliveryPrice } from './AdminTeam';
+import { TradingChart } from './TradingChart';
 
 export const AdminDashboard = () => {
   const {
     products, orders, updateOrderStatus,
     addProduct, updateProduct, deleteProduct,
-    setAppMode, t, branchesData, samplePromoCodes
+    setAppMode, t, branchesData, samplePromoCodes, showToast, logoutUser
   } = useApp();
 
   const [adminTab, setAdminTab] = useState('dashboard');
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+
+  // Couriers (shared between Couriers tab and order assignment)
+  const [couriers, setCouriers] = usePersistedList('istiqlol_couriers', defaultCouriers);
+  const [orderCouriers, setOrderCouriers] = usePersistedList('istiqlol_order_couriers', {});
+
+  const assignCourier = (orderId, courierId) => {
+    setOrderCouriers(prev => ({ ...prev, [orderId]: courierId }));
+    const c = couriers.find(x => x.id === courierId);
+    if (c) {
+      setCouriers(prev => prev.map(x => (x.id === courierId ? { ...x, status: 'delivering' } : x)));
+      showToast?.(`🛵 Buyurtma #${orderId} kuryer ${c.name} ga biriktirildi (${c.phone})`);
+    }
+  };
 
   // New product form fields
   const [newTitle, setNewTitle] = useState('');
@@ -48,34 +63,49 @@ export const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-950 text-gray-900 dark:text-gray-100 pb-16">
-      
+
       {/* Admin Header */}
-      <div className="bg-gray-900 text-white px-6 py-4 border-b border-gray-800 flex items-center justify-between shadow-md">
-        <div className="flex items-center space-x-3">
-          <IstiqlolLogo className="w-10 h-10 drop-shadow-[0_0_10px_rgba(0,255,100,0.6)]" />
+      <div className="relative overflow-hidden bg-gradient-to-r from-[#2B0812] via-[#5A0E22] to-[#2B0812] text-white px-6 py-4 border-b border-[#F3BE53]/25 flex items-center justify-between shadow-lg">
+        <div className="absolute -top-10 left-1/3 w-64 h-32 bg-[#F3BE53]/10 blur-3xl pointer-events-none" />
+        <div className="relative flex items-center space-x-3">
+          <IstiqlolLogo className="w-11 h-11 drop-shadow-[0_0_12px_rgba(243,190,83,0.55)]" />
           <div>
             <h1 className="text-lg font-black tracking-tight">{t('adminTitle')}</h1>
-            <p className="text-xs text-gray-400">{t('adminSubtitle')}</p>
+            <p className="text-xs text-[#F3BE53]/80 font-semibold">{t('adminSubtitle')}</p>
           </div>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setAppMode('client')}
-          className="bg-evos-600 hover:bg-evos-700 text-white font-extrabold text-xs px-4 py-2 rounded-xl shadow-md transition-all flex items-center space-x-1.5"
-        >
-          <span>←</span>
-          <span>{t('clientApp')}</span>
-        </button>
+        <div className="relative flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setAppMode('client')}
+            className="bg-[#F3BE53] hover:bg-[#E5A934] text-[#1E0910] font-black text-xs px-4 py-2 rounded-xl shadow-md transition-all flex items-center space-x-1.5 active:scale-95"
+          >
+            <span>←</span>
+            <span>{t('clientApp')}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={logoutUser}
+            className="bg-red-950/70 hover:bg-red-700 text-red-200 hover:text-white border border-red-800/80 font-black text-xs px-3.5 py-2 rounded-xl shadow-md transition-all flex items-center space-x-1.5 active:scale-95"
+            title="Admin hisobidan chiqish"
+          >
+            <Icon name="logout" className="w-3.5 h-3.5" />
+            <span>Chiqish</span>
+          </button>
+        </div>
       </div>
 
       {/* Admin Navigation Sub-bar */}
-      <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-6 py-3">
+      <div className="sticky top-0 z-30 bg-white/95 dark:bg-[#140810]/95 backdrop-blur border-b border-gray-200 dark:border-[#3D1422] px-6 py-3 shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center space-x-2 overflow-x-auto no-scrollbar">
           {[
             { id: 'dashboard', label: t('tabDashboard'), icon: '📊' },
             { id: 'orders', label: `${t('tabOrders')} (${orders.length})`, icon: '📦' },
             { id: 'products', label: `${t('tabProducts')} (${products.length})`, icon: '🍔' },
+            { id: 'staff', label: 'Ishchilar', icon: '👥' },
+            { id: 'couriers', label: `Kuryerlar (${couriers.length})`, icon: '🛵' },
             { id: 'branches', label: t('tabBranches'), icon: '🏪' },
             { id: 'promos', label: t('tabPromos'), icon: '🏷️' }
           ].map(tab => (
@@ -83,11 +113,10 @@ export const AdminDashboard = () => {
               key={tab.id}
               type="button"
               onClick={() => setAdminTab(tab.id)}
-              className={`flex items-center space-x-1.5 px-4 py-2 rounded-xl text-xs font-black transition-all ${
-                adminTab === tab.id
-                  ? 'bg-gray-900 text-white dark:bg-amber-500 dark:text-gray-950 shadow'
-                  : 'text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800'
-              }`}
+              className={`flex items-center whitespace-nowrap space-x-1.5 px-4 py-2 rounded-xl text-xs font-black transition-all ${adminTab === tab.id
+                  ? 'bg-gradient-to-r from-[#9B1832] to-[#BA1D3D] text-white shadow-md shadow-[#9B1832]/30'
+                  : 'text-gray-500 hover:bg-gray-100 dark:hover:bg-[#250D15] hover:text-[#9B1832] dark:hover:text-[#F3BE53]'
+                }`}
             >
               <span>{tab.icon}</span>
               <span>{tab.label}</span>
@@ -97,11 +126,11 @@ export const AdminDashboard = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        
+
         {/* TAB: DASHBOARD OVERVIEW */}
         {adminTab === 'dashboard' && (
           <div className="space-y-8">
-            
+
             {/* 4 Stat Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               <div className="p-5 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm space-y-1">
@@ -129,61 +158,8 @@ export const AdminDashboard = () => {
               </div>
             </div>
 
-            {/* SVG Revenue Interactive Trend Chart */}
-            <div className="p-6 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-base font-black text-gray-900 dark:text-white">Haftalik Tushum Dinamikasi</h3>
-                  <p className="text-xs text-gray-400">Oxirgi 7 kunlik buyurtmalar statistikasi</p>
-                </div>
-                <span className="text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full">
-                  O'sish sur'ati: +22%
-                </span>
-              </div>
-
-              <div className="h-64 w-full">
-                <svg className="w-full h-full" viewBox="0 0 700 220">
-                  <defs>
-                    <linearGradient id="adminGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#00A859" stopOpacity="0.4" />
-                      <stop offset="100%" stopColor="#00A859" stopOpacity="0.0" />
-                    </linearGradient>
-                  </defs>
-                  <polyline
-                    fill="url(#adminGrad)"
-                    stroke="#00A859"
-                    strokeWidth="3.5"
-                    points="
-                      20,180
-                      120,150
-                      220,165
-                      320,110
-                      420,130
-                      520,70
-                      650,40
-                      650,220
-                      20,220
-                    "
-                  />
-                  {[
-                    { x: 20, y: 180, label: 'Dush' },
-                    { x: 120, y: 150, label: 'Sesh' },
-                    { x: 220, y: 165, label: 'Chor' },
-                    { x: 320, y: 110, label: 'Pay' },
-                    { x: 420, y: 130, label: 'Juma' },
-                    { x: 520, y: 70, label: 'Shan' },
-                    { x: 650, y: 40, label: 'Yak' }
-                  ].map((pt, idx) => (
-                    <g key={idx}>
-                      <circle cx={pt.x} cy={pt.y} r="5" fill="#00A859" stroke="#ffffff" strokeWidth="2" />
-                      <text x={pt.x} y="210" textAnchor="middle" fill="#888888" fontSize="11" fontWeight="bold">
-                        {pt.label}
-                      </text>
-                    </g>
-                  ))}
-                </svg>
-              </div>
-            </div>
+            {/* Trading-style Revenue Chart */}
+            <TradingChart />
 
             {/* Best Selling Products */}
             <div className="p-6 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm space-y-4">
@@ -225,6 +201,7 @@ export const AdminDashboard = () => {
                       <th className="p-4">Manzil</th>
                       <th className="p-4">To'lov</th>
                       <th className="p-4">Status</th>
+                      <th className="p-4">Kuryer</th>
                       <th className="p-4">Amallar</th>
                     </tr>
                   </thead>
@@ -252,19 +229,49 @@ export const AdminDashboard = () => {
                           {order.paymentMethod}
                         </td>
                         <td className="p-4">
-                          <span className={`px-2.5 py-1 rounded-full text-[10px] font-black ${
-                            order.status === 5
+                          <span className={`px-2.5 py-1 rounded-full text-[10px] font-black ${order.status === 5
                               ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300'
                               : order.status === 4
-                              ? 'bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300'
-                              : 'bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300'
-                          }`}>
+                                ? 'bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300'
+                                : 'bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300'
+                            }`}>
                             {order.status === 1 && '1. Qabul qilindi'}
                             {order.status === 2 && '2. Tayyorlanmoqda'}
                             {order.status === 3 && '3. Qadoqlandi'}
                             {order.status === 4 && '4. Kuryer yo\'lda'}
                             {order.status === 5 && '5. Yetkazildi'}
                           </span>
+                        </td>
+                        <td className="p-4 min-w-[190px]">
+                          {(() => {
+                            const assigned = couriers.find(c => c.id === orderCouriers[order.id]);
+                            return (
+                              <div className="space-y-1.5">
+                                <select
+                                  value={orderCouriers[order.id] || ''}
+                                  onChange={(e) => assignCourier(order.id, e.target.value)}
+                                  className="w-full text-xs p-1.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 font-bold"
+                                >
+                                  <option value="">— Kuryer tanlang —</option>
+                                  {couriers.filter(c => c.status !== 'offline' || c.id === orderCouriers[order.id]).map(c => (
+                                    <option key={c.id} value={c.id}>
+                                      {transportMeta[c.transport]?.icon} {c.name} • {formatUZS(c.baseFee)}
+                                    </option>
+                                  ))}
+                                </select>
+                                {assigned && (
+                                  <div className="flex items-center justify-between gap-2">
+                                    <a href={`tel:${assigned.phone.replace(/\s/g, '')}`} className="text-[10px] font-black text-emerald-600 hover:underline">
+                                      📞 {assigned.phone}
+                                    </a>
+                                    <span className="text-[10px] font-black text-[#9B1832] dark:text-[#F3BE53]">
+                                      {formatUZS(calcDeliveryPrice(assigned, 5))}
+                                    </span>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })()}
                         </td>
                         <td className="p-4">
                           <select
@@ -359,6 +366,14 @@ export const AdminDashboard = () => {
               ))}
             </div>
           </div>
+        )}
+
+        {/* TAB: STAFF */}
+        {adminTab === 'staff' && <StaffPanel showToast={showToast} />}
+
+        {/* TAB: COURIERS */}
+        {adminTab === 'couriers' && (
+          <CouriersPanel couriers={couriers} setCouriers={setCouriers} showToast={showToast} />
         )}
 
         {/* TAB: BRANCHES & PROMOS PREVIEWS */}

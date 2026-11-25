@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "ISTIQLOL",
+    "slug": "istiqlol-fast-food",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#18090E"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "uz.istiqlol.food"
+    },
+    "android": {
+      "package": "uz.istiqlol.food",
+      "adaptiveIcon": {
+        "backgroundColor": "#18090E"
+      },
+      "usesCleartextTraffic": true
+    }
+  }
+}
+

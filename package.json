@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "expo:install": "cd mobile-expo && npm install",
+    "expo:start": "cd mobile-expo && npx expo start"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.4",

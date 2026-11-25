@@ -18,6 +18,7 @@ import { CartDrawer } from './components/CartDrawer';
 import { CheckoutModal } from './components/CheckoutModal';
 import { OrderTrackingModal } from './components/OrderTrackingModal';
 import { LoyaltyProfileModal } from './components/LoyaltyProfileModal';
+import { LoyaltyModal } from './components/LoyaltyModal';
 import { AuthModal } from './components/AuthModal';
 import { AuthPage } from './components/AuthPage';
 import { QrModal } from './components/QrModal';
@@ -26,13 +27,13 @@ import { MobileNav } from './components/MobileNav';
 import { AdminDashboard } from './components/AdminDashboard';
 
 export function App() {
-  const { appMode } = useApp();
+  const { appMode, isAuthenticated, isAdmin } = useApp();
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FCF6F7] dark:bg-[#18090E] text-[#1E0910] dark:text-[#FFF0F3] antialiased font-sans selection:bg-[#BA1D3D] selection:text-white transition-colors duration-300">
       <ToastContainer />
       
-      {appMode === 'admin' ? (
+      {appMode === 'admin' && isAuthenticated && isAdmin ? (
         <AdminDashboard />
       ) : appMode === 'login' || appMode === 'register' ? (
         <AuthPage />
@@ -57,6 +58,7 @@ export function App() {
           <CheckoutModal />
           <OrderTrackingModal />
           <LoyaltyProfileModal />
+          <LoyaltyModal />
           <AuthModal />
           <QrModal />
           <LiveChatWidget />

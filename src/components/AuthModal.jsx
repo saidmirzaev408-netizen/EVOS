@@ -35,7 +35,7 @@ export const AuthModal = () => {
     // Clean non-digits after prefix
     const prefix = '+998 ';
     const rawDigits = val.slice(prefix.length).replace(/\D/g, '').slice(0, 9);
-    
+
     let formatted = prefix;
     if (rawDigits.length > 0) formatted += rawDigits.slice(0, 2);
     if (rawDigits.length > 2) formatted += ' ' + rawDigits.slice(2, 5);
@@ -197,11 +197,10 @@ export const AuthModal = () => {
             <button
               type="button"
               onClick={() => setAuthMode('register')}
-              className={`py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 ${
-                isRegister
+              className={`py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 ${isRegister
                   ? 'bg-gradient-to-r from-[#BA1D3D] to-[#800F26] text-white shadow-md shadow-[#BA1D3D]/30'
                   : 'text-gray-400 hover:text-white'
-              }`}
+                }`}
             >
               <span>🎁</span>
               <span>Ro'yxatdan o'tish</span>
@@ -209,11 +208,10 @@ export const AuthModal = () => {
             <button
               type="button"
               onClick={() => setAuthMode('login')}
-              className={`py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 ${
-                !isRegister
+              className={`py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 ${!isRegister
                   ? 'bg-gradient-to-r from-[#BA1D3D] to-[#800F26] text-white shadow-md shadow-[#BA1D3D]/30'
                   : 'text-gray-400 hover:text-white'
-              }`}
+                }`}
             >
               <Icon name="lock" className="w-3.5 h-3.5 text-[#F3BE53]" />
               <span>Kirish</span>

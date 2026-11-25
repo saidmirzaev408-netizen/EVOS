@@ -192,6 +192,12 @@ export const Icon = ({ name, className = "w-5 h-5", filled, ...props }) => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
         </svg>
       );
+    case 'logout':
+      return (
+        <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m-4-4 4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+        </svg>
+      );
     default:
       return <span className={className}>•</span>;
   }

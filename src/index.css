@@ -282,10 +282,20 @@ html.light .border-\[\#2E3626\] {
   border-color: #F0D6DC !important;
 }
 
-/* Typography in Light Mode - keep white text on dark elements, buttons, and badges */
-html:not(.dark) .text-white:not(button):not(.bg-\[\#BA1D3D\] *):not(.bg-\[\#9B1832\] *):not(.bg-\[\#00A859\] *):not(.bg-red-600 *):not(.bg-black *):not(footer *),
-html.light .text-white:not(button):not(.bg-\[\#BA1D3D\] *):not(.bg-\[\#9B1832\] *):not(.bg-\[\#00A859\] *):not(.bg-red-600 *):not(.bg-black *):not(footer *) {
+/* Typography in Light Mode - keep white text on dark elements, buttons, selects, and badges */
+html:not(.dark) .text-white:not(button):not(option):not(select *):not(.bg-\[\#BA1D3D\] *):not(.bg-\[\#9B1832\] *):not(.bg-\[\#00A859\] *):not(.bg-red-600 *):not(.bg-black *):not(.bg-\[\#0B0E14\] *):not(.bg-\[\#250C16\] *):not(.bg-\[\#240C16\] *):not(footer *),
+html.light .text-white:not(button):not(option):not(select *):not(.bg-\[\#BA1D3D\] *):not(.bg-\[\#9B1832\] *):not(.bg-\[\#00A859\] *):not(.bg-red-600 *):not(.bg-black *):not(.bg-\[\#0B0E14\] *):not(.bg-\[\#250C16\] *):not(.bg-\[\#240C16\] *):not(footer *) {
   color: #200810 !important;
+}
+
+/* Always keep dark language select options clearly readable in both Light & Dark mode */
+select option.bg-\[\#1C0810\] {
+  background-color: #1C0810 !important;
+  color: #FFFFFF !important;
+}
+select optgroup.bg-\[\#1C0810\] {
+  background-color: #14060B !important;
+  color: #F3BE53 !important;
 }
 
 html:not(.dark) .text-gray-300,
